@@ -1,7 +1,7 @@
 - 👋 Hi, I’m @Emilia-Vieira
 - 🌱 I’m currently learning Python
 - 💞️ I’m looking to collaborate on análise/modelagem de dados
-- 📫 How to reach me por aqi
+- 📫 How to reach me por aqui
 
 <!---
 Emilia-Vieira is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
