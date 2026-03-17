@@ -1,0 +1,179 @@
+/**
+ * CSS Reset Acessível — Tesouro Estadual MG
+ * Baseado no Modern CSS Reset com melhorias de acessibilidade (WCAG 2.1)
+ */
+
+/* Box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Margens e paddings */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* HTML e Body */
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  tab-size: 4;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  line-height: var(--leading-relaxed);
+  color: var(--color-cinza-900);
+  background-color: var(--color-branco);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+}
+
+/* Imagens e mídia */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* Formulários */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Texto */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: var(--leading-tight);
+  font-weight: var(--font-bold);
+  color: var(--color-cinza-900);
+}
+
+/* Links */
+a {
+  color: var(--color-mg-azul-medio);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--color-mg-azul);
+  text-decoration-thickness: 2px;
+}
+
+/* ACESSIBILIDADE: Skip link */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: var(--space-4);
+  z-index: var(--z-toast);
+  padding: var(--space-3) var(--space-6);
+  background: var(--color-mg-azul);
+  color: var(--color-branco);
+  font-weight: var(--font-semibold);
+  font-size: var(--text-base);
+  border-radius: var(--radius-base);
+  text-decoration: none;
+  transition: top var(--transition-fast);
+}
+
+.skip-link:focus {
+  top: var(--space-4);
+  outline: var(--focus-outline);
+  outline-offset: var(--focus-offset);
+}
+
+/* ACESSIBILIDADE: Foco visível */
+:focus-visible {
+  outline: var(--focus-outline);
+  outline-offset: var(--focus-offset);
+  border-radius: var(--radius-sm);
+}
+
+/* ACESSIBILIDADE: Ocultar visualmente mas manter acessível */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Listas */
+ul, ol {
+  list-style: none;
+}
+
+/* Divisor */
+hr {
+  border: none;
+  border-top: var(--border-width) solid var(--color-cinza-200);
+  margin: var(--space-8) 0;
+}
+
+/* Seleção de texto */
+::selection {
+  background-color: var(--color-mg-azul-xclaro);
+  color: var(--color-mg-azul);
+}
+
+/* Scrollbar personalizada (navegadores webkit) */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-cinza-100);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-cinza-400);
+  border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-cinza-500);
+}
+
+/* Tabela */
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+/* Imagem como âncora — sem borda no IE */
+img[src] {
+  border-style: none;
+}

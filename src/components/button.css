@@ -1,0 +1,305 @@
+/**
+ * Botões — Tesouro Estadual MG
+ * Sistema completo: primary, secondary, ghost, danger, link
+ */
+
+/* ================================
+ * BASE DO BOTÃO
+ * ================================ */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-6);
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  font-weight: var(--font-semibold);
+  line-height: 1.25;
+  text-decoration: none;
+  border: var(--border-width-2) solid transparent;
+  border-radius: var(--radius-base);
+  cursor: pointer;
+  transition:
+    background-color var(--transition-fast),
+    color var(--transition-fast),
+    border-color var(--transition-fast),
+    box-shadow var(--transition-fast),
+    transform var(--transition-fast);
+  white-space: nowrap;
+  user-select: none;
+  -webkit-user-select: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn:focus-visible {
+  outline: var(--focus-outline);
+  outline-offset: var(--focus-offset);
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.btn:disabled,
+.btn[aria-disabled="true"] {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Ícone no botão */
+.btn svg,
+.btn .btn-icon {
+  width: 1.25em;
+  height: 1.25em;
+  flex-shrink: 0;
+}
+
+/* ================================
+ * VARIANTES
+ * ================================ */
+
+/* Primary — ação principal */
+.btn--primary {
+  background-color: var(--color-mg-azul-medio);
+  color: var(--color-branco);
+  border-color: var(--color-mg-azul-medio);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn--primary:hover {
+  background-color: var(--color-mg-azul);
+  border-color: var(--color-mg-azul);
+  box-shadow: var(--shadow-azul);
+  color: var(--color-branco);
+  text-decoration: none;
+}
+
+/* Secondary — ação secundária */
+.btn--secondary {
+  background-color: transparent;
+  color: var(--color-mg-azul-medio);
+  border-color: var(--color-mg-azul-medio);
+}
+
+.btn--secondary:hover {
+  background-color: var(--color-mg-azul-xclaro);
+  color: var(--color-mg-azul);
+  border-color: var(--color-mg-azul);
+  text-decoration: none;
+}
+
+/* Ghost — discreta */
+.btn--ghost {
+  background-color: transparent;
+  color: var(--color-cinza-700);
+  border-color: transparent;
+}
+
+.btn--ghost:hover {
+  background-color: var(--color-cinza-100);
+  color: var(--color-cinza-900);
+  text-decoration: none;
+}
+
+/* Danger — ação destrutiva */
+.btn--danger {
+  background-color: var(--color-erro);
+  color: var(--color-branco);
+  border-color: var(--color-erro);
+}
+
+.btn--danger:hover {
+  background-color: #7F1D1D;
+  border-color: #7F1D1D;
+  color: var(--color-branco);
+  text-decoration: none;
+}
+
+/* Success */
+.btn--success {
+  background-color: var(--color-sucesso);
+  color: var(--color-branco);
+  border-color: var(--color-sucesso);
+}
+
+.btn--success:hover {
+  background-color: #145E30;
+  border-color: #145E30;
+  color: var(--color-branco);
+  text-decoration: none;
+}
+
+/* Ouro — destaque especial */
+.btn--ouro {
+  background-color: var(--color-mg-ouro);
+  color: var(--color-cinza-900);
+  border-color: var(--color-mg-ouro);
+  font-weight: var(--font-bold);
+}
+
+.btn--ouro:hover {
+  background-color: #A8780A;
+  border-color: #A8780A;
+  color: var(--color-cinza-900);
+  text-decoration: none;
+}
+
+/* Link — parece link */
+.btn--link {
+  background: none;
+  border: none;
+  color: var(--color-mg-azul-medio);
+  padding-inline: 0;
+  font-weight: var(--font-medium);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.btn--link:hover {
+  color: var(--color-mg-azul);
+  text-decoration-thickness: 2px;
+}
+
+/* Branco — sobre fundos escuros */
+.btn--white {
+  background-color: var(--color-branco);
+  color: var(--color-mg-azul);
+  border-color: var(--color-branco);
+}
+
+.btn--white:hover {
+  background-color: var(--color-cinza-100);
+  text-decoration: none;
+}
+
+/* Outline branco */
+.btn--outline-white {
+  background-color: transparent;
+  color: var(--color-branco);
+  border-color: var(--color-branco);
+}
+
+.btn--outline-white:hover {
+  background-color: rgb(255 255 255 / 0.1);
+  color: var(--color-branco);
+  text-decoration: none;
+}
+
+/* ================================
+ * TAMANHOS
+ * ================================ */
+
+.btn--sm {
+  padding: var(--space-2) var(--space-4);
+  font-size: var(--text-sm);
+  gap: var(--space-1-5);
+}
+
+.btn--lg {
+  padding: var(--space-4) var(--space-8);
+  font-size: var(--text-lg);
+  gap: var(--space-3);
+}
+
+.btn--xl {
+  padding: var(--space-5) var(--space-10);
+  font-size: var(--text-xl);
+  gap: var(--space-3);
+}
+
+.btn--full {
+  width: 100%;
+}
+
+/* Apenas ícone */
+.btn--icon-only {
+  padding: var(--space-3);
+  aspect-ratio: 1;
+}
+
+.btn--icon-only.btn--sm {
+  padding: var(--space-2);
+}
+
+/* ================================
+ * GRUPO DE BOTÕES
+ * ================================ */
+
+.btn-group {
+  display: inline-flex;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.btn-group--stacked {
+  flex-direction: column;
+}
+
+/* Botões adjacentes sem gap */
+.btn-group--joined .btn {
+  border-radius: 0;
+}
+
+.btn-group--joined .btn:first-child {
+  border-radius: var(--radius-base) 0 0 var(--radius-base);
+}
+
+.btn-group--joined .btn:last-child {
+  border-radius: 0 var(--radius-base) var(--radius-base) 0;
+}
+
+/* ================================
+ * LOADING STATE
+ * ================================ */
+
+.btn--loading {
+  pointer-events: none;
+}
+
+.btn--loading::before {
+  content: '';
+  width: 1em;
+  height: 1em;
+  border: 2px solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: btn-spin 0.6s linear infinite;
+  flex-shrink: 0;
+}
+
+@keyframes btn-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ================================
+ * DOWNLOAD BUTTON (específico Tesouro)
+ * ================================ */
+
+.btn--download {
+  background-color: var(--color-cinza-100);
+  color: var(--color-cinza-800);
+  border-color: var(--color-cinza-300);
+  gap: var(--space-3);
+}
+
+.btn--download:hover {
+  background-color: var(--color-cinza-200);
+  border-color: var(--color-cinza-400);
+  color: var(--color-cinza-900);
+  text-decoration: none;
+}
+
+.btn--download .download-type {
+  font-size: var(--text-xs);
+  font-weight: var(--font-bold);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--color-mg-azul-medio);
+  background: var(--color-mg-azul-xclaro);
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+}

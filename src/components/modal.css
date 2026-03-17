@@ -1,0 +1,326 @@
+/**
+ * Modal, Accordion, Tabs — Tesouro Estadual MG
+ */
+
+/* ================================
+ * MODAL
+ * ================================ */
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgb(0 0 0 / 0.5);
+  z-index: var(--z-modal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-4);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--transition-base), visibility var(--transition-base);
+}
+
+.modal-overlay.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal {
+  background: var(--color-branco);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-xl);
+  width: 100%;
+  max-width: 560px;
+  max-height: 90vh;
+  overflow-y: auto;
+  transform: translateY(16px) scale(0.98);
+  transition: transform var(--transition-base);
+  position: relative;
+}
+
+.modal-overlay.is-open .modal {
+  transform: translateY(0) scale(1);
+}
+
+.modal--sm { max-width: 400px; }
+.modal--lg { max-width: 720px; }
+.modal--xl { max-width: 960px; }
+
+.modal__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-6) var(--space-6) var(--space-4);
+  border-bottom: 1px solid var(--color-cinza-200);
+}
+
+.modal__title {
+  font-size: var(--text-xl);
+  font-weight: var(--font-bold);
+  color: var(--color-cinza-900);
+  margin: 0;
+}
+
+.modal__close {
+  width: 36px;
+  height: 36px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: var(--color-cinza-500);
+  border-radius: var(--radius-base);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
+}
+
+.modal__close:hover {
+  background: var(--color-cinza-100);
+  color: var(--color-cinza-900);
+}
+
+.modal__close svg {
+  width: 20px;
+  height: 20px;
+}
+
+.modal__body {
+  padding: var(--space-6);
+  color: var(--color-cinza-700);
+  line-height: var(--leading-relaxed);
+}
+
+.modal__footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--space-3);
+  padding: var(--space-4) var(--space-6) var(--space-6);
+  border-top: 1px solid var(--color-cinza-200);
+}
+
+/* ================================
+ * ACCORDION
+ * ================================ */
+
+.accordion {
+  border: 1px solid var(--color-cinza-200);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.accordion__item {
+  border-bottom: 1px solid var(--color-cinza-200);
+}
+
+.accordion__item:last-child {
+  border-bottom: none;
+}
+
+.accordion__trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding: var(--space-5) var(--space-6);
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  font-weight: var(--font-semibold);
+  color: var(--color-cinza-900);
+  transition: background-color var(--transition-fast), color var(--transition-fast);
+}
+
+.accordion__trigger:hover {
+  background: var(--color-cinza-50);
+  color: var(--color-mg-azul);
+}
+
+.accordion__trigger:focus-visible {
+  outline: var(--focus-outline);
+  outline-offset: -2px;
+}
+
+.accordion__item.is-open > .accordion__trigger {
+  color: var(--color-mg-azul);
+  background: var(--color-mg-azul-xclaro);
+}
+
+.accordion__icon {
+  width: 20px;
+  height: 20px;
+  color: var(--color-cinza-400);
+  flex-shrink: 0;
+  transition: transform var(--transition-base), color var(--transition-base);
+}
+
+.accordion__item.is-open .accordion__icon {
+  transform: rotate(180deg);
+  color: var(--color-mg-azul-medio);
+}
+
+.accordion__panel {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height var(--transition-slow), padding var(--transition-slow);
+}
+
+.accordion__item.is-open .accordion__panel {
+  max-height: 1000px;
+}
+
+.accordion__content {
+  padding: var(--space-5) var(--space-6) var(--space-6);
+  color: var(--color-cinza-700);
+  line-height: var(--leading-relaxed);
+  border-top: 1px solid var(--color-cinza-100);
+}
+
+/* Accordion de legislação */
+.accordion--legislacao .accordion__trigger {
+  font-size: var(--text-sm);
+}
+
+.accordion--legislacao .accordion__trigger-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-size: var(--text-xs);
+  color: var(--color-cinza-500);
+  margin-top: var(--space-1);
+  font-weight: var(--font-regular);
+}
+
+/* ================================
+ * TABS
+ * ================================ */
+
+.tabs {
+  display: flex;
+  flex-direction: column;
+}
+
+.tabs__nav {
+  display: flex;
+  border-bottom: 2px solid var(--color-cinza-200);
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.tabs__nav::-webkit-scrollbar {
+  display: none;
+}
+
+.tabs__tab {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-5);
+  font-size: var(--text-sm);
+  font-weight: var(--font-semibold);
+  color: var(--color-cinza-600);
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -2px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all var(--transition-fast);
+}
+
+.tabs__tab:hover {
+  color: var(--color-mg-azul);
+}
+
+.tabs__tab.is-active {
+  color: var(--color-mg-azul);
+  border-bottom-color: var(--color-mg-azul-medio);
+}
+
+.tabs__tab:focus-visible {
+  outline: var(--focus-outline);
+  outline-offset: var(--focus-offset);
+  border-radius: var(--radius-sm);
+}
+
+.tabs__tab svg {
+  width: 16px;
+  height: 16px;
+}
+
+.tabs__panel {
+  display: none;
+  padding-top: var(--space-6);
+}
+
+.tabs__panel.is-active {
+  display: block;
+}
+
+/* Tabs com card */
+.tabs--card .tabs__nav {
+  border: none;
+  gap: var(--space-2);
+  background: var(--color-cinza-100);
+  padding: var(--space-2);
+  border-radius: var(--radius-lg);
+}
+
+.tabs--card .tabs__tab {
+  border: none;
+  border-radius: var(--radius-base);
+  margin: 0;
+  padding: var(--space-2) var(--space-4);
+  color: var(--color-cinza-600);
+}
+
+.tabs--card .tabs__tab.is-active {
+  background: var(--color-branco);
+  color: var(--color-mg-azul);
+  box-shadow: var(--shadow-sm);
+}
+
+/* ================================
+ * BREADCRUMB
+ * ================================ */
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  font-size: var(--text-sm);
+  color: var(--color-cinza-500);
+  padding: var(--space-3) 0;
+}
+
+.breadcrumb__link {
+  color: var(--color-cinza-500);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.breadcrumb__link:hover {
+  color: var(--color-mg-azul-medio);
+  text-decoration: underline;
+}
+
+.breadcrumb__separator {
+  color: var(--color-cinza-300);
+  user-select: none;
+}
+
+.breadcrumb__separator svg {
+  width: 14px;
+  height: 14px;
+}
+
+.breadcrumb__current {
+  color: var(--color-cinza-700);
+  font-weight: var(--font-medium);
+}

@@ -1,0 +1,218 @@
+/**
+ * Design Tokens — Tesouro Estadual de Minas Gerais
+ * Sistema de Design v1.0
+ *
+ * Conformidade: WCAG 2.1 Level AA, eMAG 3.1
+ * Baseado na identidade visual do Governo de Minas Gerais
+ */
+
+:root {
+  /* ================================
+   * CORES PRIMÁRIAS — Institucional
+   * ================================ */
+  --color-mg-azul:          #003B71;  /* Azul MG principal — confiança, autoridade */
+  --color-mg-azul-medio:    #0057A8;  /* CTAs primários, links */
+  --color-mg-azul-claro:    #1A73C5;  /* Hover, destaques */
+  --color-mg-azul-xclaro:   #E8F0FC;  /* Backgrounds de seção azul-claro */
+
+  /* ================================
+   * CORES SECUNDÁRIAS
+   * ================================ */
+  --color-mg-ouro:          #C8960C;  /* Acento dourado — símbolo MG (ajustado para contraste) */
+  --color-mg-ouro-claro:    #F5C842;  /* Decoração, bordas sutis */
+  --color-mg-ouro-bg:       #FFF8E1;  /* Background âmbar suave */
+  --color-mg-verde:         #1B7A40;  /* Sucesso, validação */
+  --color-mg-verde-claro:   #E8F5EE;  /* Background verde suave */
+
+  /* ================================
+   * CORES NEUTRAS
+   * ================================ */
+  --color-cinza-900:        #111827;  /* Texto principal — 18.1:1 sobre branco */
+  --color-cinza-800:        #1F2937;  /* Texto dark */
+  --color-cinza-700:        #374151;  /* Texto secundário */
+  --color-cinza-600:        #4B5563;  /* Texto terciário */
+  --color-cinza-500:        #6B7280;  /* Texto desabilitado */
+  --color-cinza-400:        #9CA3AF;  /* Placeholders */
+  --color-cinza-300:        #D1D5DB;  /* Bordas */
+  --color-cinza-200:        #E5E7EB;  /* Bordas suaves */
+  --color-cinza-100:        #F3F4F6;  /* Background alternativo */
+  --color-cinza-50:         #F9FAFB;  /* Background sutil */
+  --color-branco:           #FFFFFF;  /* Background principal */
+
+  /* ================================
+   * CORES SEMÂNTICAS DE FEEDBACK
+   * ================================ */
+  --color-sucesso:          #1B7A40;
+  --color-sucesso-bg:       #DCFCE7;
+  --color-sucesso-borda:    #86EFAC;
+
+  --color-alerta:           #92400E;
+  --color-alerta-bg:        #FEF3C7;
+  --color-alerta-borda:     #FCD34D;
+
+  --color-erro:             #991B1B;
+  --color-erro-bg:          #FEE2E2;
+  --color-erro-borda:       #FCA5A5;
+
+  --color-info:             #1E40AF;
+  --color-info-bg:          #DBEAFE;
+  --color-info-borda:       #93C5FD;
+
+  /* ================================
+   * TIPOGRAFIA
+   * ================================ */
+  --font-sans:    'Inter', 'Roboto', system-ui, -apple-system, sans-serif;
+  --font-serif:   'Merriweather', 'Georgia', serif;
+  --font-mono:    'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+
+  /* Escala tipográfica (Modular Scale 1.25) */
+  --text-xs:    0.75rem;    /* 12px */
+  --text-sm:    0.875rem;   /* 14px */
+  --text-base:  1rem;       /* 16px */
+  --text-lg:    1.125rem;   /* 18px */
+  --text-xl:    1.25rem;    /* 20px */
+  --text-2xl:   1.5rem;     /* 24px */
+  --text-3xl:   1.875rem;   /* 30px */
+  --text-4xl:   2.25rem;    /* 36px */
+  --text-5xl:   3rem;       /* 48px */
+  --text-6xl:   3.75rem;    /* 60px */
+
+  /* Pesos tipográficos */
+  --font-regular:   400;
+  --font-medium:    500;
+  --font-semibold:  600;
+  --font-bold:      700;
+  --font-extrabold: 800;
+
+  /* Line heights */
+  --leading-tight:   1.2;
+  --leading-snug:    1.375;
+  --leading-normal:  1.5;
+  --leading-relaxed: 1.6;
+  --leading-loose:   2;
+
+  /* Letter spacing */
+  --tracking-tight:  -0.025em;
+  --tracking-normal: 0em;
+  --tracking-wide:   0.025em;
+  --tracking-wider:  0.05em;
+  --tracking-widest: 0.1em;
+
+  /* ================================
+   * ESPAÇAMENTO (Base 4px)
+   * ================================ */
+  --space-0:   0;
+  --space-px:  1px;
+  --space-0-5: 0.125rem;   /* 2px */
+  --space-1:   0.25rem;    /* 4px */
+  --space-1-5: 0.375rem;   /* 6px */
+  --space-2:   0.5rem;     /* 8px */
+  --space-2-5: 0.625rem;   /* 10px */
+  --space-3:   0.75rem;    /* 12px */
+  --space-3-5: 0.875rem;   /* 14px */
+  --space-4:   1rem;       /* 16px */
+  --space-5:   1.25rem;    /* 20px */
+  --space-6:   1.5rem;     /* 24px */
+  --space-7:   1.75rem;    /* 28px */
+  --space-8:   2rem;       /* 32px */
+  --space-9:   2.25rem;    /* 36px */
+  --space-10:  2.5rem;     /* 40px */
+  --space-11:  2.75rem;    /* 44px */
+  --space-12:  3rem;       /* 48px */
+  --space-14:  3.5rem;     /* 56px */
+  --space-16:  4rem;       /* 64px */
+  --space-20:  5rem;       /* 80px */
+  --space-24:  6rem;       /* 96px */
+  --space-28:  7rem;       /* 112px */
+  --space-32:  8rem;       /* 128px */
+
+  /* ================================
+   * BORDER RADIUS
+   * ================================ */
+  --radius-none:   0;
+  --radius-sm:     0.25rem;  /* 4px */
+  --radius-base:   0.5rem;   /* 8px */
+  --radius-md:     0.75rem;  /* 12px */
+  --radius-lg:     1rem;     /* 16px */
+  --radius-xl:     1.5rem;   /* 24px */
+  --radius-2xl:    2rem;     /* 32px */
+  --radius-full:   9999px;
+
+  /* ================================
+   * SOMBRAS E ELEVAÇÃO
+   * ================================ */
+  --shadow-xs:    0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-sm:    0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --shadow-base:  0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-md:    0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-lg:    0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  --shadow-xl:    0 25px 50px -12px rgb(0 0 0 / 0.25);
+  --shadow-inset: inset 0 2px 4px 0 rgb(0 0 0 / 0.05);
+  --shadow-azul:  0 4px 14px 0 rgb(0 87 168 / 0.25);
+
+  /* ================================
+   * TRANSIÇÕES E ANIMAÇÕES
+   * ================================ */
+  --transition-fast:    150ms ease-in-out;
+  --transition-base:    250ms ease-in-out;
+  --transition-slow:    350ms ease-in-out;
+  --transition-bounce:  300ms cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* ================================
+   * Z-INDEX
+   * ================================ */
+  --z-below:    -1;
+  --z-base:      0;
+  --z-raised:   10;
+  --z-dropdown: 100;
+  --z-sticky:   200;
+  --z-overlay:  300;
+  --z-modal:    400;
+  --z-toast:    500;
+  --z-tooltip:  600;
+
+  /* ================================
+   * LAYOUT
+   * ================================ */
+  --container-sm:  640px;
+  --container-md:  768px;
+  --container-lg:  1024px;
+  --container-xl:  1280px;
+  --container-2xl: 1536px;
+
+  --header-height:        72px;
+  --header-height-mobile: 60px;
+  --sidebar-width:        280px;
+
+  /* ================================
+   * BORDAS
+   * ================================ */
+  --border-width:    1px;
+  --border-width-2:  2px;
+  --border-width-4:  4px;
+
+  /* ================================
+   * FOCO (Acessibilidade)
+   * ================================ */
+  --focus-ring:       0 0 0 3px rgb(0 87 168 / 0.4);
+  --focus-ring-error: 0 0 0 3px rgb(153 27 27 / 0.4);
+  --focus-outline:    2px solid var(--color-mg-azul-medio);
+  --focus-offset:     2px;
+}
+
+/* Dark mode — preparação futura */
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Implementar dark mode tokens aqui */
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --transition-fast: 0ms;
+    --transition-base: 0ms;
+    --transition-slow: 0ms;
+    --transition-bounce: 0ms;
+  }
+}

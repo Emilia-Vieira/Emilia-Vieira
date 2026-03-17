@@ -1,0 +1,394 @@
+/**
+ * Formulários — Tesouro Estadual MG
+ * Acessível: WCAG 2.1 AA, eMAG
+ */
+
+/* ================================
+ * FORM GROUP
+ * ================================ */
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.form-group + .form-group {
+  margin-top: var(--space-5);
+}
+
+/* Label */
+.form-label {
+  font-size: var(--text-sm);
+  font-weight: var(--font-semibold);
+  color: var(--color-cinza-700);
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.form-label .required {
+  color: var(--color-erro);
+  font-size: var(--text-base);
+  line-height: 1;
+}
+
+/* Hint text */
+.form-hint {
+  font-size: var(--text-xs);
+  color: var(--color-cinza-500);
+  line-height: var(--leading-normal);
+}
+
+/* Mensagem de erro */
+.form-error {
+  font-size: var(--text-xs);
+  color: var(--color-erro);
+  font-weight: var(--font-medium);
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.form-error svg {
+  width: 13px;
+  height: 13px;
+  flex-shrink: 0;
+}
+
+/* Mensagem de sucesso */
+.form-success-msg {
+  font-size: var(--text-xs);
+  color: var(--color-sucesso);
+  font-weight: var(--font-medium);
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+/* ================================
+ * INPUT BASE
+ * ================================ */
+
+.form-control {
+  width: 100%;
+  padding: var(--space-3) var(--space-4);
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  color: var(--color-cinza-900);
+  background-color: var(--color-branco);
+  border: var(--border-width) solid var(--color-cinza-300);
+  border-radius: var(--radius-base);
+  line-height: var(--leading-normal);
+  transition:
+    border-color var(--transition-fast),
+    box-shadow var(--transition-fast),
+    background-color var(--transition-fast);
+  appearance: none;
+}
+
+.form-control::placeholder {
+  color: var(--color-cinza-400);
+}
+
+.form-control:hover {
+  border-color: var(--color-cinza-400);
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--color-mg-azul-medio);
+  box-shadow: var(--focus-ring);
+  background-color: var(--color-branco);
+}
+
+/* Estado de erro */
+.form-control.is-error,
+.form-group.has-error .form-control {
+  border-color: var(--color-erro);
+  background-color: var(--color-erro-bg);
+}
+
+.form-control.is-error:focus,
+.form-group.has-error .form-control:focus {
+  box-shadow: var(--focus-ring-error);
+}
+
+/* Estado de sucesso */
+.form-control.is-success,
+.form-group.has-success .form-control {
+  border-color: var(--color-sucesso);
+}
+
+/* Estado desabilitado */
+.form-control:disabled,
+.form-control[readonly] {
+  background-color: var(--color-cinza-50);
+  color: var(--color-cinza-500);
+  cursor: not-allowed;
+  border-color: var(--color-cinza-200);
+}
+
+/* ================================
+ * TAMANHOS DE INPUT
+ * ================================ */
+
+.form-control--sm {
+  padding: var(--space-2) var(--space-3);
+  font-size: var(--text-sm);
+}
+
+.form-control--lg {
+  padding: var(--space-4) var(--space-5);
+  font-size: var(--text-lg);
+}
+
+/* ================================
+ * TEXTAREA
+ * ================================ */
+
+textarea.form-control {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* ================================
+ * SELECT
+ * ================================ */
+
+select.form-control {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%236B7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right var(--space-4) center;
+  padding-right: var(--space-10);
+  cursor: pointer;
+}
+
+/* ================================
+ * INPUT COM ÍCONE
+ * ================================ */
+
+.input-group {
+  position: relative;
+}
+
+.input-group .form-control {
+  padding-left: var(--space-10);
+}
+
+.input-group__icon {
+  position: absolute;
+  left: var(--space-3);
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-cinza-400);
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+}
+
+.input-group__icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+.input-group--right .form-control {
+  padding-right: var(--space-10);
+  padding-left: var(--space-4);
+}
+
+.input-group__icon--right {
+  left: auto;
+  right: var(--space-3);
+}
+
+/* ================================
+ * SEARCH INPUT
+ * ================================ */
+
+.search-input {
+  position: relative;
+}
+
+.search-input__field {
+  width: 100%;
+  padding: var(--space-4) var(--space-5);
+  padding-left: var(--space-12);
+  padding-right: var(--space-24);
+  border: 2px solid var(--color-cinza-200);
+  border-radius: var(--radius-full);
+  font-size: var(--text-lg);
+  color: var(--color-cinza-900);
+  background: var(--color-branco);
+  transition: all var(--transition-fast);
+  box-shadow: var(--shadow-sm);
+}
+
+.search-input__field:focus {
+  outline: none;
+  border-color: var(--color-mg-azul-medio);
+  box-shadow: var(--shadow-azul);
+}
+
+.search-input__field::placeholder {
+  color: var(--color-cinza-400);
+}
+
+.search-input__icon {
+  position: absolute;
+  left: var(--space-5);
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-cinza-400);
+  pointer-events: none;
+}
+
+.search-input__icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.search-input__btn {
+  position: absolute;
+  right: var(--space-2);
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* ================================
+ * CHECKBOX E RADIO
+ * ================================ */
+
+.form-check {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  cursor: pointer;
+}
+
+.form-check__input {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  margin-top: 2px;
+  border: 2px solid var(--color-cinza-400);
+  border-radius: var(--radius-sm);
+  background: var(--color-branco);
+  appearance: none;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  position: relative;
+}
+
+.form-check__input[type="radio"] {
+  border-radius: 50%;
+}
+
+.form-check__input:checked {
+  background-color: var(--color-mg-azul-medio);
+  border-color: var(--color-mg-azul-medio);
+}
+
+.form-check__input[type="checkbox"]:checked::after {
+  content: '';
+  position: absolute;
+  inset: 2px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.form-check__input[type="radio"]:checked::after {
+  content: '';
+  position: absolute;
+  inset: 3px;
+  background: var(--color-branco);
+  border-radius: 50%;
+}
+
+.form-check__input:focus-visible {
+  outline: var(--focus-outline);
+  outline-offset: var(--focus-offset);
+}
+
+.form-check__label {
+  font-size: var(--text-sm);
+  color: var(--color-cinza-700);
+  line-height: var(--leading-normal);
+  user-select: none;
+}
+
+/* ================================
+ * FORM SECTION / FIELDSET
+ * ================================ */
+
+.form-section {
+  border: 1px solid var(--color-cinza-200);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  margin-bottom: var(--space-8);
+}
+
+.form-section__legend {
+  font-size: var(--text-base);
+  font-weight: var(--font-bold);
+  color: var(--color-cinza-900);
+  padding: 0 var(--space-3);
+  margin-left: calc(var(--space-3) * -1);
+}
+
+/* ================================
+ * ALERT INLINE
+ * ================================ */
+
+.alert {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  padding: var(--space-4) var(--space-5);
+  border-radius: var(--radius-base);
+  border-left: 4px solid;
+  font-size: var(--text-sm);
+  line-height: var(--leading-relaxed);
+}
+
+.alert svg {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.alert--info {
+  background: var(--color-info-bg);
+  border-color: var(--color-mg-azul-medio);
+  color: var(--color-info);
+}
+
+.alert--success {
+  background: var(--color-sucesso-bg);
+  border-color: var(--color-sucesso);
+  color: var(--color-sucesso);
+}
+
+.alert--warning {
+  background: var(--color-alerta-bg);
+  border-color: #D97706;
+  color: var(--color-alerta);
+}
+
+.alert--error {
+  background: var(--color-erro-bg);
+  border-color: var(--color-erro);
+  color: var(--color-erro);
+}
+
+.alert__content {
+  flex: 1;
+}
+
+.alert__title {
+  font-weight: var(--font-semibold);
+  margin-bottom: var(--space-1);
+}

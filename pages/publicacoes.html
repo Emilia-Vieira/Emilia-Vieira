@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Publicações, legislação, portarias e resoluções do Tesouro Estadual de Minas Gerais.">
+  <title>Publicações — Tesouro Estadual MG</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="/src/main.css">
+  <link rel="icon" type="image/svg+xml" href="/src/assets/logo-tesouro.svg">
+</head>
+<body class="page-wrapper">
+  <a href="#main-content" class="skip-link">Ir para o conteúdo principal</a>
+  <div class="gov-bar" role="banner">
+    <div class="container">
+      <div class="gov-bar__inner">
+        <a href="https://www.mg.gov.br" class="gov-bar__brand"><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M10 2L2 7v11h5v-7h6v7h5V7L10 2z"/></svg>Portal do Governo de Minas Gerais</a>
+      </div>
+    </div>
+  </div>
+  <header class="header" role="banner">
+    <div class="container">
+      <div class="header__inner">
+        <a href="/" class="header__logo"><img src="/src/assets/logo-tesouro.svg" alt="" class="header__logo-img" width="220" height="54"></a>
+        <nav class="nav-primary" aria-label="Navegação principal">
+          <ul class="nav-primary__list" role="list">
+            <li class="nav-primary__item"><a href="/pages/transparencia.html" class="nav-primary__link">Transparência Fiscal</a></li>
+            <li class="nav-primary__item"><a href="/pages/servicos.html" class="nav-primary__link">Serviços</a></li>
+            <li class="nav-primary__item is-active"><a href="/pages/publicacoes.html" class="nav-primary__link">Publicações</a></li>
+            <li class="nav-primary__item"><a href="#" class="nav-primary__link">Sobre</a></li>
+            <li class="nav-primary__item"><a href="/pages/contato.html" class="nav-primary__link">Contato</a></li>
+          </ul>
+        </nav>
+        <div class="header__actions">
+          <button class="header__hamburger" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-nav">
+            <span class="header__hamburger-line" aria-hidden="true"></span>
+            <span class="header__hamburger-line" aria-hidden="true"></span>
+            <span class="header__hamburger-line" aria-hidden="true"></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div class="mobile-nav__overlay" aria-hidden="true"></div>
+  <nav id="mobile-nav" class="mobile-nav" aria-label="Menu mobile" aria-hidden="true">
+    <div class="mobile-nav__header">
+      <span style="font-weight:700;color:var(--color-mg-azul);font-size:0.875rem;">MENU</span>
+      <button class="mobile-nav__close" aria-label="Fechar menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    </div>
+    <ul class="mobile-nav__list">
+      <li class="mobile-nav__item"><a href="/pages/transparencia.html" class="mobile-nav__link">Transparência Fiscal</a></li>
+      <li class="mobile-nav__item"><a href="/pages/servicos.html" class="mobile-nav__link">Serviços</a></li>
+      <li class="mobile-nav__item"><a href="/pages/publicacoes.html" class="mobile-nav__link">Publicações</a></li>
+      <li class="mobile-nav__item"><a href="/pages/contato.html" class="mobile-nav__link">Contato</a></li>
+    </ul>
+  </nav>
+
+  <main id="main-content" class="page-main">
+    <section class="page-hero" aria-label="Cabeçalho">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Você está em">
+          <a href="/" class="breadcrumb__link">Início</a>
+          <span class="breadcrumb__separator" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></span>
+          <span class="breadcrumb__current" aria-current="page">Publicações</span>
+        </nav>
+        <h1 class="page-hero__title">Publicações e Legislação</h1>
+        <p class="page-hero__desc">Portarias, resoluções, notas técnicas, boletins e relatórios do Tesouro Estadual de Minas Gerais.</p>
+      </div>
+    </section>
+
+    <div class="section">
+      <div class="container">
+
+        <!-- FILTROS -->
+        <div class="flex items-center gap-4 flex-wrap mb-8" data-animate>
+          <div class="input-group" style="width: 320px;">
+            <div class="input-group__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+            <input type="search" class="form-control" placeholder="Buscar publicação..." aria-label="Buscar publicação">
+          </div>
+          <select class="form-control" style="width: auto;" aria-label="Filtrar por tipo">
+            <option>Todos os tipos</option>
+            <option>Portaria</option>
+            <option>Resolução</option>
+            <option>Nota Técnica</option>
+            <option>Boletim</option>
+            <option>Relatório</option>
+          </select>
+          <select class="form-control" style="width: auto;" aria-label="Filtrar por ano">
+            <option>Todos os anos</option>
+            <option selected>2025</option>
+            <option>2024</option>
+            <option>2023</option>
+            <option>2022</option>
+          </select>
+          <div class="chip-group">
+            <span class="tag tag--active">Portaria</span>
+            <span class="tag tag--interactive">Resolução</span>
+            <span class="tag tag--interactive">Nota Técnica</span>
+            <span class="tag tag--interactive">Boletim</span>
+          </div>
+        </div>
+
+        <!-- TABS por tipo -->
+        <div class="tabs mb-8" data-animate data-delay="100">
+          <div class="tabs__nav" role="tablist" aria-label="Tipo de publicação">
+            <button class="tabs__tab is-active" role="tab">Todas</button>
+            <button class="tabs__tab" role="tab">Portarias</button>
+            <button class="tabs__tab" role="tab">Resoluções</button>
+            <button class="tabs__tab" role="tab">Notas Técnicas</button>
+            <button class="tabs__tab" role="tab">Boletins</button>
+            <button class="tabs__tab" role="tab">Relatórios Anuais</button>
+          </div>
+
+          <!-- Todas -->
+          <div class="tabs__panel is-active" role="tabpanel">
+            <div style="display: flex; flex-direction: column; gap: 0.75rem; margin-top: 1.5rem;">
+
+              <a href="#" class="doc-card">
+                <div class="doc-card__type-icon doc-card__type-icon--pdf">PDF</div>
+                <div class="doc-card__content">
+                  <div class="doc-card__title">Portaria STN nº 016/2025 — Normas de Classificação Orçamentária para o Exercício 2025</div>
+                  <div class="doc-card__meta">
+                    <span class="badge badge--azul">Portaria</span>
+                    <span>•</span>
+                    <time datetime="2025-03-01">1 mar 2025</time>
+                    <span>•</span>
+                    <span>2,4 MB</span>
+                  </div>
+                </div>
+                <div class="doc-card__actions">
+                  <button class="btn btn--secondary btn--sm" aria-label="Baixar PDF">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    Baixar
+                  </button>
+                </div>
+              </a>
+
+              <a href="#" class="doc-card">
+                <div class="doc-card__type-icon doc-card__type-icon--pdf">PDF</div>
+                <div class="doc-card__content">
+                  <div class="doc-card__title">Resolução SEFAZ nº 5.890/2025 — Regras de Execução Financeira do Estado de Minas Gerais</div>
+                  <div class="doc-card__meta">
+                    <span class="badge badge--verde">Resolução</span>
+                    <span>•</span>
+                    <time datetime="2025-02-14">14 fev 2025</time>
+                    <span>•</span>
+                    <span>1,8 MB</span>
+                  </div>
+                </div>
+                <div class="doc-card__actions">
+                  <button class="btn btn--secondary btn--sm">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    Baixar
+                  </button>
+                </div>
+              </a>
+
+              <a href="#" class="doc-card">
+                <div class="doc-card__type-icon doc-card__type-icon--doc">DOC</div>
+                <div class="doc-card__content">
+                  <div class="doc-card__title">Nota Técnica nº 003/2025 — Metodologia de Cálculo da DCL/RCL no Estado de MG</div>
+                  <div class="doc-card__meta">
+                    <span class="badge badge--cinza">Nota Técnica</span>
+                    <span>•</span>
+                    <time datetime="2025-01-28">28 jan 2025</time>
+                    <span>•</span>
+                    <span>0,9 MB</span>
+                  </div>
+                </div>
+                <div class="doc-card__actions">
+                  <button class="btn btn--secondary btn--sm">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    Baixar
+                  </button>
+                </div>
+              </a>
+
+              <a href="#" class="doc-card">
+                <div class="doc-card__type-icon doc-card__type-icon--xls">XLS</div>
+                <div class="doc-card__content">
+                  <div class="doc-card__title">PCASP 2025 — Plano de Contas Aplicado ao Setor Público</div>
+                  <div class="doc-card__meta">
+                    <span class="badge badge--ouro">Manual</span>
+                    <span>•</span>
+                    <time datetime="2025-01-02">2 jan 2025</time>
+                    <span>•</span>
+                    <span>5,1 MB</span>
+                  </div>
+                </div>
+                <div class="doc-card__actions">
+                  <button class="btn btn--secondary btn--sm">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    Baixar
+                  </button>
+                </div>
+              </a>
+
+              <a href="#" class="doc-card">
+                <div class="doc-card__type-icon doc-card__type-icon--pdf">PDF</div>
+                <div class="doc-card__content">
+                  <div class="doc-card__title">Boletim de Finanças Públicas nº 48 — Análise do Resultado Fiscal 2024</div>
+                  <div class="doc-card__meta">
+                    <span class="badge badge--azul">Boletim</span>
+                    <span>•</span>
+                    <time datetime="2024-12-20">20 dez 2024</time>
+                    <span>•</span>
+                    <span>3,7 MB</span>
+                  </div>
+                </div>
+                <div class="doc-card__actions">
+                  <button class="btn btn--secondary btn--sm">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    Baixar
+                  </button>
+                </div>
+              </a>
+
+              <a href="#" class="doc-card">
+                <div class="doc-card__type-icon doc-card__type-icon--pdf">PDF</div>
+                <div class="doc-card__content">
+                  <div class="doc-card__title">Relatório Anual do Tesouro 2024 — Balanço das Finanças Públicas de MG</div>
+                  <div class="doc-card__meta">
+                    <span class="badge badge--verde">Relatório Anual</span>
+                    <span>•</span>
+                    <time datetime="2024-12-31">31 dez 2024</time>
+                    <span>•</span>
+                    <span>12,4 MB</span>
+                  </div>
+                </div>
+                <div class="doc-card__actions">
+                  <button class="btn btn--secondary btn--sm">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    Baixar
+                  </button>
+                </div>
+              </a>
+
+            </div>
+
+            <!-- Paginação -->
+            <div class="flex items-center justify-between mt-8 flex-wrap gap-4">
+              <span class="text-secondary text-small">Mostrando 1-6 de 328 publicações</span>
+              <nav class="pagination" aria-label="Paginação das publicações">
+                <button class="pagination__btn" aria-label="Anterior" disabled><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg></button>
+                <button class="pagination__btn is-active" aria-current="page">1</button>
+                <button class="pagination__btn">2</button>
+                <button class="pagination__btn">3</button>
+                <span class="pagination__ellipsis">…</span>
+                <button class="pagination__btn">55</button>
+                <button class="pagination__btn" aria-label="Próximo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg></button>
+              </nav>
+            </div>
+          </div>
+
+          <!-- Portarias -->
+          <div class="tabs__panel" role="tabpanel">
+            <p class="text-secondary mt-6">Filtrando apenas Portarias...</p>
+          </div>
+          <!-- Demais tabs -->
+          <div class="tabs__panel" role="tabpanel"><p class="text-secondary mt-6">Resoluções</p></div>
+          <div class="tabs__panel" role="tabpanel"><p class="text-secondary mt-6">Notas Técnicas</p></div>
+          <div class="tabs__panel" role="tabpanel"><p class="text-secondary mt-6">Boletins</p></div>
+          <div class="tabs__panel" role="tabpanel"><p class="text-secondary mt-6">Relatórios Anuais</p></div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="footer__bottom">
+      <div class="container">
+        <div class="footer__bottom-inner">
+          <div class="footer__copyright"><p><strong>Tesouro Estadual — Governo de Minas Gerais</strong> &copy; 2025</p></div>
+          <nav class="footer__legal" aria-label="Links legais">
+            <a href="/" class="footer__legal-link">Início</a>
+            <a href="/pages/contato.html" class="footer__legal-link">Contato</a>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script type="module" src="/src/js/main.js"></script>
+</body>
+</html>

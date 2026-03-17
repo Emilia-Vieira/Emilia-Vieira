@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 60" role="img" aria-label="Tesouro Estadual de Minas Gerais">
+  <!-- Escudo estilizado MG -->
+  <g transform="translate(0, 5)">
+    <path d="M22 2 L36 2 L36 32 C36 40 28 46 22 48 C16 46 8 40 8 32 L8 2 Z" fill="#003B71"/>
+    <path d="M22 8 L32 8 L32 32 C32 38 26 43 22 45 C18 43 12 38 12 32 L12 8 Z" fill="#0057A8"/>
+    <!-- Estrela dourada -->
+    <path d="M22 14 L23.5 19 L29 19 L24.5 22 L26 27 L22 24 L18 27 L19.5 22 L15 19 L20.5 19 Z" fill="#F5C842"/>
+  </g>
+
+  <!-- Textos -->
+  <g transform="translate(44, 0)">
+    <text x="0" y="20" font-family="Inter, sans-serif" font-size="11" font-weight="800" fill="#003B71" letter-spacing="-0.3">TESOURO ESTADUAL</text>
+    <text x="0" y="34" font-family="Inter, sans-serif" font-size="9" font-weight="500" fill="#4B5563" letter-spacing="0.5">MINAS GERAIS</text>
+    <line x1="0" y1="38" x2="155" y2="38" stroke="#E5E7EB" stroke-width="1"/>
+    <text x="0" y="50" font-family="Inter, sans-serif" font-size="8" font-weight="400" fill="#9CA3AF" letter-spacing="1">SECRETARIA DE ESTADO DE FAZENDA</text>
+  </g>
+</svg>
