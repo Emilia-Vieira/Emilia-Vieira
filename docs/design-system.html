@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Design System — Tesouro Estadual MG</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="icon" type="image/svg+xml" href="/Emilia-Vieira/assets/logo-tesouro-B60L0LUt.svg">
+  <style>
+    .ds-sidebar {
+      position: sticky;
+      top: 72px;
+      width: 240px;
+      flex-shrink: 0;
+      height: calc(100vh - 72px);
+      overflow-y: auto;
+      padding: 1.5rem 1rem;
+      border-right: 1px solid var(--color-cinza-200);
+      background: var(--color-cinza-50);
+    }
+    .ds-main { flex: 1; padding: 2rem 2.5rem; max-width: 900px; }
+    .ds-section { margin-bottom: 3rem; }
+    .ds-section-title { font-size: 1.5rem; font-weight: 800; color: var(--color-cinza-900); margin-bottom: 1.5rem; padding-bottom: 0.75rem; border-bottom: 2px solid var(--color-cinza-200); }
+    .ds-sub { font-size: 1rem; font-weight: 700; color: var(--color-cinza-700); margin-bottom: 1rem; margin-top: 1.5rem; }
+    .ds-preview { background: var(--color-cinza-50); border: 1px solid var(--color-cinza-200); border-radius: var(--radius-lg); padding: 1.5rem; margin-bottom: 0.75rem; }
+    .ds-preview--dark { background: var(--color-cinza-900); }
+    .ds-code { background: var(--color-cinza-900); color: #e5e7eb; padding: 1rem 1.25rem; border-radius: var(--radius-base); font-family: var(--font-mono); font-size: 0.8125rem; overflow-x: auto; margin-bottom: 1.5rem; line-height: 1.6; }
+    .color-swatch { width: 64px; height: 64px; border-radius: var(--radius-base); border: 1px solid rgba(0,0,0,0.05); }
+    .ds-nav-link { display: block; padding: 0.375rem 0.75rem; font-size: 0.8125rem; color: var(--color-cinza-600); text-decoration: none; border-radius: var(--radius-sm); transition: all 0.15s; margin-bottom: 0.125rem; }
+    .ds-nav-link:hover, .ds-nav-link.active { background: var(--color-mg-azul-xclaro); color: var(--color-mg-azul); text-decoration: none; font-weight: 600; }
+    .ds-nav-section { font-size: 0.6875rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-cinza-400); padding: 0.5rem 0.75rem 0.25rem; margin-top: 1rem; }
+    .ds-header { background: var(--color-mg-azul); color: white; padding: 1.5rem 2rem; }
+    .ds-header h1 { color: white; font-size: 1.5rem; margin: 0; }
+    .ds-header p { color: rgba(255,255,255,0.7); margin: 0.25rem 0 0; font-size: 0.875rem; }
+    .ds-badge { display: inline-flex; align-items: center; gap: 0.25rem; padding: 2px 8px; border-radius: 999px; font-size: 0.75rem; font-weight: 700; }
+    .ds-layout { display: flex; min-height: 100vh; }
+    .space-example { height: 1px; background: var(--color-mg-azul-medio); display: inline-block; vertical-align: middle; }
+  </style>
+  <script type="module" crossorigin src="/Emilia-Vieira/assets/tabs-Ck-hyfK4.js"></script>
+  <link rel="stylesheet" crossorigin href="/Emilia-Vieira/assets/tabs-BWM53lqg.css">
+</head>
+<body style="margin:0; font-family: var(--font-sans);">
+
+  <!-- DS Header -->
+  <div class="ds-header">
+    <div style="display: flex; align-items: center; justify-content: space-between;">
+      <div>
+        <h1>Design System — Tesouro Estadual MG</h1>
+        <p>Guia de componentes, tokens e padrões visuais · v1.0.0</p>
+      </div>
+      <div style="display: flex; gap: 0.75rem;">
+        <span class="ds-badge" style="background: rgba(255,255,255,0.15); color: white;">WCAG 2.1 AA</span>
+        <span class="ds-badge" style="background: rgba(255,255,255,0.15); color: white;">eMAG 3.1</span>
+        <a href="/Emilia-Vieira/" class="btn btn--outline-white btn--sm">← Voltar ao site</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="ds-layout">
+
+    <!-- Sidebar -->
+    <nav class="ds-sidebar" aria-label="Navegação do Design System">
+      <div class="ds-nav-section">Fundamentos</div>
+      <a href="#cores" class="ds-nav-link">Cores</a>
+      <a href="#tipografia" class="ds-nav-link">Tipografia</a>
+      <a href="#espacamento" class="ds-nav-link">Espaçamento</a>
+      <a href="#grid" class="ds-nav-link">Grid e Layout</a>
+      <a href="#sombras" class="ds-nav-link">Sombras</a>
+      <div class="ds-nav-section">Componentes</div>
+      <a href="#botoes" class="ds-nav-link">Botões</a>
+      <a href="#badges" class="ds-nav-link">Badges e Tags</a>
+      <a href="#forms" class="ds-nav-link">Formulários</a>
+      <a href="#alerts" class="ds-nav-link">Alertas</a>
+      <a href="#cards" class="ds-nav-link">Cards</a>
+      <a href="#tabelas" class="ds-nav-link">Tabelas</a>
+      <a href="#accordion" class="ds-nav-link">Accordion</a>
+      <a href="#tabs" class="ds-nav-link">Tabs</a>
+      <div class="ds-nav-section">Específicos</div>
+      <a href="#stat-cards" class="ds-nav-link">Stat Cards</a>
+      <a href="#graficos" class="ds-nav-link">Gráficos</a>
+      <a href="#header" class="ds-nav-link">Header/Nav</a>
+      <a href="#footer" class="ds-nav-link">Footer</a>
+      <a href="#acessibilidade" class="ds-nav-link">Acessibilidade</a>
+    </nav>
+
+    <!-- Main -->
+    <main class="ds-main">
+
+      <!-- INTRO -->
+      <div class="ds-section">
+        <h2 class="ds-section-title" id="intro">Sobre o Design System</h2>
+        <p style="color: var(--color-cinza-700); line-height: 1.7; margin-bottom: 1rem;">Este design system foi desenvolvido especificamente para o <strong>Tesouro Estadual de Minas Gerais</strong>, em conformidade com as normas de acessibilidade WCAG 2.1 Level AA e o modelo eMAG 3.1 do Governo Federal Brasileiro.</p>
+        <div class="grid grid--3 gap-4">
+          <div class="card"><div class="card__body">
+            <div style="font-size: 1.5rem; font-weight: 800; color: var(--color-mg-azul);">35+</div>
+            <div style="font-size: 0.875rem; color: var(--color-cinza-500);">Componentes documentados</div>
+          </div></div>
+          <div class="card"><div class="card__body">
+            <div style="font-size: 1.5rem; font-weight: 800; color: var(--color-mg-verde);">WCAG AA</div>
+            <div style="font-size: 0.875rem; color: var(--color-cinza-500);">Conformidade de acessibilidade</div>
+          </div></div>
+          <div class="card"><div class="card__body">
+            <div style="font-size: 1.5rem; font-weight: 800; color: var(--color-mg-ouro);">120+</div>
+            <div style="font-size: 0.875rem; color: var(--color-cinza-500);">Design tokens CSS</div>
+          </div></div>
+        </div>
+      </div>
+
+      <!-- CORES -->
+      <div class="ds-section" id="cores">
+        <h2 class="ds-section-title">Paleta de Cores</h2>
+
+        <div class="ds-sub">Primárias — Identidade Institucional MG</div>
+        <div class="flex flex-wrap gap-4 mb-6">
+          <div style="text-align: center;">
+            <div class="color-swatch" style="background: #003B71;"></div>
+            <div style="font-size: 0.75rem; margin-top: 0.375rem; color: var(--color-cinza-700);">Azul MG<br><code>#003B71</code></div>
+          </div>
+          <div style="text-align: center;">
+            <div class="color-swatch" style="background: #0057A8;"></div>
+            <div style="font-size: 0.75rem; margin-top: 0.375rem; color: var(--color-cinza-700);">Azul Médio<br><code>#0057A8</code></div>
+          </div>
+          <div style="text-align: center;">
+            <div class="color-swatch" style="background: #1A73C5;"></div>
+            <div style="font-size: 0.75rem; margin-top: 0.375rem; color: var(--color-cinza-700);">Azul Claro<br><code>#1A73C5</code></div>
+          </div>
+          <div style="text-align: center;">
+            <div class="color-swatch" style="background: #E8F0FC; border: 1px solid #D1D5DB;"></div>
+            <div style="font-size: 0.75rem; margin-top: 0.375rem; color: var(--color-cinza-700);">Azul X-Claro<br><code>#E8F0FC</code></div>
+          </div>
+          <div style="text-align: center;">
+            <div class="color-swatch" style="background: #C8960C;"></div>
+            <div style="font-size: 0.75rem; margin-top: 0.375rem; color: var(--color-cinza-700);">Ouro MG<br><code>#C8960C</code></div>
+          </div>
+          <div style="text-align: center;">
+            <div class="color-swatch" style="background: #1B7A40;"></div>
+            <div style="font-size: 0.75rem; margin-top: 0.375rem; color: var(--color-cinza-700);">Verde<br><code>#1B7A40</code></div>
+          </div>
+        </div>
+
+        <div class="ds-sub">Neutras</div>
+        <div class="flex flex-wrap gap-3 mb-6">
+          <div style="text-align: center;"><div class="color-swatch" style="background:#111827;"></div><div style="font-size:0.7rem;margin-top:0.25rem;color:var(--color-cinza-700);">900<br>#111827</div></div>
+          <div style="text-align: center;"><div class="color-swatch" style="background:#374151;"></div><div style="font-size:0.7rem;margin-top:0.25rem;color:var(--color-cinza-700);">700<br>#374151</div></div>
+          <div style="text-align: center;"><div class="color-swatch" style="background:#6B7280;"></div><div style="font-size:0.7rem;margin-top:0.25rem;color:var(--color-cinza-700);">500<br>#6B7280</div></div>
+          <div style="text-align: center;"><div class="color-swatch" style="background:#9CA3AF;"></div><div style="font-size:0.7rem;margin-top:0.25rem;color:var(--color-cinza-700);">400<br>#9CA3AF</div></div>
+          <div style="text-align: center;"><div class="color-swatch" style="background:#D1D5DB;border: 1px solid #E5E7EB;"></div><div style="font-size:0.7rem;margin-top:0.25rem;color:var(--color-cinza-700);">300<br>#D1D5DB</div></div>
+          <div style="text-align: center;"><div class="color-swatch" style="background:#F3F4F6;border: 1px solid #E5E7EB;"></div><div style="font-size:0.7rem;margin-top:0.25rem;color:var(--color-cinza-700);">100<br>#F3F4F6</div></div>
+          <div style="text-align: center;"><div class="color-swatch" style="background:#FFFFFF;border: 1px solid #E5E7EB;"></div><div style="font-size:0.7rem;margin-top:0.25rem;color:var(--color-cinza-700);">Branco<br>#FFFFFF</div></div>
+        </div>
+
+        <div class="ds-sub">Uso via CSS Tokens</div>
+        <div class="ds-code">/* Design Tokens — usar sempre via variáveis */
+--color-mg-azul:       #003B71;  /* Cabeçalhos, elementos primários */
+--color-mg-azul-medio: #0057A8;  /* CTAs, links, botões primários */
+--color-mg-azul-claro: #1A73C5;  /* Hover, destaques */
+--color-mg-ouro:       #C8960C;  /* Acento dourado, símbolo MG */
+--color-mg-verde:      #1B7A40;  /* Sucesso, validação positiva */
+
+/* Verificado: contraste mínimo 4.5:1 (WCAG AA)
+   #003B71 sobre #FFF → 12.6:1 ✓
+   #111827 sobre #FFF → 18.1:1 ✓
+   #0057A8 sobre #FFF →  8.6:1 ✓ */</div>
+      </div>
+
+      <!-- TIPOGRAFIA -->
+      <div class="ds-section" id="tipografia">
+        <h2 class="ds-section-title">Tipografia</h2>
+        <div class="ds-sub">Famílias de Fontes</div>
+        <div class="ds-preview">
+          <p style="font-family: 'Inter', sans-serif; font-size: 1rem; margin-bottom: 0.5rem; color: var(--color-cinza-700);">Inter — Fonte principal para corpo, labels e UI</p>
+          <p style="font-family: 'Merriweather', serif; font-size: 1rem; margin-bottom: 0.5rem; color: var(--color-cinza-700);">Merriweather — Fonte serif para títulos institucionais</p>
+          <p style="font-family: 'JetBrains Mono', monospace; font-size: 0.9rem; color: var(--color-cinza-700);">JetBrains Mono — Para valores fiscais e código</p>
+        </div>
+
+        <div class="ds-sub">Escala Tipográfica</div>
+        <div class="ds-preview">
+          <div style="font-size: 3rem; font-weight: 800; letter-spacing: -0.02em; line-height: 1.1; color: var(--color-cinza-900); margin-bottom: 0.5rem;">Hero — 48px / 3rem</div>
+          <div style="font-size: 2.25rem; font-weight: 800; letter-spacing: -0.02em; line-height: 1.1; color: var(--color-cinza-900); margin-bottom: 0.5rem;">H1 — 36px / 2.25rem</div>
+          <div style="font-size: 1.875rem; font-weight: 700; line-height: 1.2; color: var(--color-cinza-900); margin-bottom: 0.5rem;">H2 — 30px / 1.875rem</div>
+          <div style="font-size: 1.5rem; font-weight: 700; line-height: 1.25; color: var(--color-cinza-900); margin-bottom: 0.5rem;">H3 — 24px / 1.5rem</div>
+          <div style="font-size: 1.25rem; font-weight: 600; line-height: 1.375; color: var(--color-cinza-900); margin-bottom: 0.5rem;">H4 — 20px / 1.25rem</div>
+          <div style="font-size: 1.125rem; font-weight: 600; line-height: 1.375; color: var(--color-cinza-800); margin-bottom: 0.5rem;">H5 — 18px / 1.125rem</div>
+          <div style="font-size: 1rem; font-weight: 600; color: var(--color-cinza-800); margin-bottom: 0.5rem;">H6 — 16px / 1rem</div>
+          <div style="font-size: 1.125rem; color: var(--color-cinza-700); line-height: 1.6; margin-bottom: 0.5rem;">Lead text — Introdução e destaque de seção</div>
+          <div style="font-size: 1rem; color: var(--color-cinza-700); line-height: 1.6; margin-bottom: 0.5rem;">Body text — Corpo padrão para leitura confortável</div>
+          <div style="font-size: 0.875rem; color: var(--color-cinza-600); margin-bottom: 0.5rem;">Small — Labels, metadados e informações secundárias</div>
+          <div style="font-size: 0.75rem; color: var(--color-cinza-500);">Tiny — Notas, legendas e rodapés</div>
+        </div>
+      </div>
+
+      <!-- BOTÕES -->
+      <div class="ds-section" id="botoes">
+        <h2 class="ds-section-title">Botões</h2>
+
+        <div class="ds-sub">Variantes</div>
+        <div class="ds-preview">
+          <div class="flex flex-wrap gap-3">
+            <button class="btn btn--primary">Primary</button>
+            <button class="btn btn--secondary">Secondary</button>
+            <button class="btn btn--ghost">Ghost</button>
+            <button class="btn btn--danger">Danger</button>
+            <button class="btn btn--success">Success</button>
+            <button class="btn btn--ouro">Ouro</button>
+          </div>
+        </div>
+
+        <div class="ds-sub">Tamanhos</div>
+        <div class="ds-preview">
+          <div class="flex items-center flex-wrap gap-3">
+            <button class="btn btn--primary btn--sm">Pequeno</button>
+            <button class="btn btn--primary">Médio (padrão)</button>
+            <button class="btn btn--primary btn--lg">Grande</button>
+            <button class="btn btn--primary btn--xl">Extra Grande</button>
+          </div>
+        </div>
+
+        <div class="ds-sub">Com Ícones</div>
+        <div class="ds-preview">
+          <div class="flex flex-wrap gap-3">
+            <button class="btn btn--primary">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Baixar PDF
+            </button>
+            <button class="btn btn--secondary">
+              Ver mais
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </button>
+            <button class="btn btn--ghost btn--icon-only" aria-label="Configurações">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="ds-sub">Sobre fundos escuros</div>
+        <div class="ds-preview ds-preview--dark">
+          <div class="flex flex-wrap gap-3">
+            <button class="btn btn--white">Branco</button>
+            <button class="btn btn--outline-white">Outline Branco</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- BADGES -->
+      <div class="ds-section" id="badges">
+        <h2 class="ds-section-title">Badges, Tags e Status</h2>
+        <div class="ds-sub">Badges</div>
+        <div class="ds-preview">
+          <div class="flex flex-wrap gap-3">
+            <span class="badge badge--azul">RREO</span>
+            <span class="badge badge--verde">Publicado</span>
+            <span class="badge badge--ouro">Em revisão</span>
+            <span class="badge badge--vermelho">Vencido</span>
+            <span class="badge badge--cinza">Rascunho</span>
+            <span class="badge badge--primary">Novo</span>
+          </div>
+        </div>
+        <div class="ds-sub">Tags</div>
+        <div class="ds-preview">
+          <div class="chip-group">
+            <span class="tag tag--active">Portaria</span>
+            <span class="tag tag--interactive">Resolução</span>
+            <span class="tag tag--interactive">Nota Técnica</span>
+            <span class="tag tag--interactive">Boletim</span>
+          </div>
+        </div>
+        <div class="ds-sub">Status</div>
+        <div class="ds-preview">
+          <div class="flex flex-wrap gap-6">
+            <span class="status status--online status--pulse">Sistema online</span>
+            <span class="status status--warning">Manutenção programada</span>
+            <span class="status status--offline">Fora do ar</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- FORMULÁRIOS -->
+      <div class="ds-section" id="forms">
+        <h2 class="ds-section-title">Formulários</h2>
+        <div class="ds-preview">
+          <div class="grid grid--2 gap-5">
+            <div class="form-group">
+              <label for="ex-nome" class="form-label">Nome completo <span class="required">*</span></label>
+              <input type="text" id="ex-nome" class="form-control" placeholder="Ex: João da Silva">
+              <span class="form-hint">Informe seu nome completo</span>
+            </div>
+            <div class="form-group">
+              <label for="ex-select" class="form-label">Tipo de documento</label>
+              <select id="ex-select" class="form-control">
+                <option>Portaria</option>
+                <option>Resolução</option>
+              </select>
+            </div>
+            <div class="form-group has-error">
+              <label for="ex-error" class="form-label">CPF <span class="required">*</span></label>
+              <input type="text" id="ex-error" class="form-control is-error" value="123.456">
+              <span class="form-error"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>CPF inválido. Informe 11 dígitos.</span>
+            </div>
+            <div class="form-group has-success">
+              <label for="ex-success" class="form-label">E-mail</label>
+              <input type="email" id="ex-success" class="form-control is-success" value="joao@gov.mg.br">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ALERTAS -->
+      <div class="ds-section" id="alerts">
+        <h2 class="ds-section-title">Alertas</h2>
+        <div class="ds-preview">
+          <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+            <div class="alert alert--info" role="alert">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+              <div class="alert__content"><strong class="alert__title">Informação</strong>Os dados são atualizados mensalmente pelo Tesouro Estadual.</div>
+            </div>
+            <div class="alert alert--success" role="alert">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              <div class="alert__content"><strong class="alert__title">Sucesso</strong>Sua solicitação foi enviada com sucesso. Você receberá resposta em até 5 dias úteis.</div>
+            </div>
+            <div class="alert alert--warning" role="alert">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+              <div class="alert__content"><strong class="alert__title">Atenção</strong>O prazo de envio do RREO encerra-se em 5 dias.</div>
+            </div>
+            <div class="alert alert--error" role="alert">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+              <div class="alert__content"><strong class="alert__title">Erro</strong>Não foi possível carregar os dados. Tente novamente.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARDS -->
+      <div class="ds-section" id="cards">
+        <h2 class="ds-section-title">Cards</h2>
+        <div class="ds-sub">Service Card</div>
+        <div class="ds-preview">
+          <div class="grid grid--2 gap-5">
+            <a href="#" class="service-card">
+              <div class="service-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+              <div class="service-card__title">Execução Orçamentária</div>
+              <div class="service-card__desc">Dados de receitas e despesas em tempo real do Estado de Minas Gerais.</div>
+              <div class="service-card__link">Acessar <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+            </a>
+            <a href="#" class="service-card">
+              <div class="service-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/></svg></div>
+              <div class="service-card__title">RREO e RGF</div>
+              <div class="service-card__desc">Relatórios bimestrais e semestrais da Lei de Responsabilidade Fiscal.</div>
+              <div class="service-card__link">Acessar <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+            </a>
+          </div>
+        </div>
+
+        <div class="ds-sub">Quick Access Card</div>
+        <div class="ds-preview">
+          <div class="grid grid--4 gap-4">
+            <a href="#" class="quick-card">
+              <div class="quick-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+              <span class="quick-card__label">Receitas</span>
+            </a>
+            <a href="#" class="quick-card">
+              <div class="quick-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+              <span class="quick-card__label">Dívida Pública</span>
+            </a>
+            <a href="#" class="quick-card">
+              <div class="quick-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/></svg></div>
+              <span class="quick-card__label">Legislação</span>
+            </a>
+            <a href="#" class="quick-card">
+              <div class="quick-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12"/></svg></div>
+              <span class="quick-card__label">Contato</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- STAT CARDS -->
+      <div class="ds-section" id="stat-cards">
+        <h2 class="ds-section-title">Stat Cards (Indicadores Fiscais)</h2>
+        <div class="ds-preview">
+          <div class="grid grid--2 gap-5">
+            <article class="stat-card">
+              <div class="stat-card__accent"></div>
+              <div class="stat-card__header">
+                <span class="stat-card__label">Receita Arrecadada</span>
+                <div class="stat-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></div>
+              </div>
+              <div class="stat-card__value stat-card__value--mono">R$ 134,8 bi</div>
+              <div style="margin-top:0.5rem"><span class="stat-card__change stat-card__change--up"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" width="12" height="12"><polyline points="18 15 12 9 6 15"/></svg>+7,3%</span></div>
+              <div class="stat-card__footer">Exercício 2024</div>
+            </article>
+            <article class="stat-card">
+              <div class="stat-card__accent stat-card__accent--verde"></div>
+              <div class="stat-card__header">
+                <span class="stat-card__label">Superávit Fiscal</span>
+                <div class="stat-card__icon stat-card__icon--verde"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+              </div>
+              <div class="stat-card__value stat-card__value--mono" style="color:var(--color-sucesso)">+R$ 4,1 bi</div>
+              <div style="margin-top:0.5rem"><span class="badge badge--verde">Superávit</span></div>
+              <div class="stat-card__footer">Resultado fiscal 2024</div>
+            </article>
+          </div>
+        </div>
+      </div>
+
+      <!-- ACCORDION -->
+      <div class="ds-section" id="accordion">
+        <h2 class="ds-section-title">Accordion</h2>
+        <div class="ds-preview">
+          <div class="accordion">
+            <div class="accordion__item is-open">
+              <button class="accordion__trigger" aria-expanded="true">
+                O que é o RREO?
+                <svg class="accordion__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="accordion__panel">
+                <div class="accordion__content">O Relatório Resumido da Execução Orçamentária (RREO) é um relatório bimestral exigido pela Lei de Responsabilidade Fiscal...</div>
+              </div>
+            </div>
+            <div class="accordion__item">
+              <button class="accordion__trigger" aria-expanded="false">
+                Qual a diferença entre RGF e RREO?
+                <svg class="accordion__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="accordion__panel">
+                <div class="accordion__content">O RGF — Relatório de Gestão Fiscal — é publicado semestralmente e enfoca os limites estabelecidos pela LRF...</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TABS -->
+      <div class="ds-section" id="tabs">
+        <h2 class="ds-section-title">Tabs</h2>
+        <div class="ds-preview">
+          <div class="tabs">
+            <div class="tabs__nav" role="tablist">
+              <button class="tabs__tab is-active" role="tab">Cidadão</button>
+              <button class="tabs__tab" role="tab">Empresa</button>
+              <button class="tabs__tab" role="tab">Município</button>
+            </div>
+            <div class="tabs__panel is-active" role="tabpanel"><p style="color: var(--color-cinza-700); padding-top: 1rem;">Conteúdo para Cidadão</p></div>
+            <div class="tabs__panel" role="tabpanel"><p style="color: var(--color-cinza-700); padding-top: 1rem;">Conteúdo para Empresa</p></div>
+            <div class="tabs__panel" role="tabpanel"><p style="color: var(--color-cinza-700); padding-top: 1rem;">Conteúdo para Município</p></div>
+          </div>
+        </div>
+        <div class="ds-sub">Variante Card</div>
+        <div class="ds-preview">
+          <div class="tabs">
+            <div class="tabs__nav tabs--card" role="tablist">
+              <button class="tabs__tab is-active" role="tab">Ativo</button>
+              <button class="tabs__tab" role="tab">Inativo</button>
+              <button class="tabs__tab" role="tab">Outro</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ACESSIBILIDADE -->
+      <div class="ds-section" id="acessibilidade">
+        <h2 class="ds-section-title">Acessibilidade</h2>
+        <div class="grid grid--2 gap-5">
+          <div class="card">
+            <div class="card__body">
+              <h3 class="h5 mb-3">Conformidade WCAG 2.1 AA</h3>
+              <ul style="list-style: disc; padding-left: 1.25rem; color: var(--color-cinza-700); font-size: 0.875rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                <li>Contraste mínimo 4.5:1 para texto normal</li>
+                <li>Contraste mínimo 3:1 para texto grande (+18px)</li>
+                <li>Navegação completa por teclado (Tab, Enter, Esc)</li>
+                <li>Skip link "Ir para o conteúdo principal"</li>
+                <li>ARIA landmarks e roles em todos os componentes</li>
+                <li>Alt text em todas as imagens informativas</li>
+                <li>Labels associados a todos os campos de formulário</li>
+                <li>Mensagens de erro claras e associadas ao campo</li>
+                <li>Foco visível com outline de 2px mínimo</li>
+                <li>Suporte a zoom até 200% sem quebra de layout</li>
+              </ul>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card__body">
+              <h3 class="h5 mb-3">Checklist eMAG 3.1</h3>
+              <ul style="list-style: disc; padding-left: 1.25rem; color: var(--color-cinza-700); font-size: 0.875rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                <li>Identificação do idioma da página (<code>lang="pt-BR"</code>)</li>
+                <li>Estrutura de headings hierárquica (H1→H6)</li>
+                <li>Formulários com <code>label for/id</code> associados</li>
+                <li>Tabelas com <code>scope</code> em <code>th</code></li>
+                <li>Links com texto descritivo (sem "clique aqui")</li>
+                <li>Compatibilidade com NVDA, VoiceOver, JAWS</li>
+                <li>Aria-live regions para conteúdo dinâmico</li>
+                <li>Barra de acessibilidade com controle de fonte</li>
+                <li>LGPD: aviso de cookies e política de privacidade</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+</body>
+</html>

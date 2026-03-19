@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Tesouro Estadual de Minas Gerais — Transparência fiscal, dados orçamentários e serviços para o cidadão.">
+  <meta name="theme-color" content="#003B71">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Tesouro Estadual — Minas Gerais">
+  <meta property="og:description" content="Portal oficial do Tesouro Estadual de Minas Gerais. Acesse dados fiscais, relatórios e serviços.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+
+  <title>Tesouro Estadual — Governo de Minas Gerais</title>
+
+  <!-- Preconnect para fontes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- CSS -->
+
+  <!-- Favicon inline SVG -->
+  <link rel="icon" type="image/svg+xml" href="/Emilia-Vieira/assets/logo-tesouro-B60L0LUt.svg">
+  <script type="module" crossorigin src="/Emilia-Vieira/assets/tabs-Ck-hyfK4.js"></script>
+  <script type="module" crossorigin src="/Emilia-Vieira/assets/main-DxD0C21G.js"></script>
+  <script type="module" crossorigin src="/Emilia-Vieira/assets/charts-DFGce7fs.js"></script>
+  <link rel="stylesheet" crossorigin href="/Emilia-Vieira/assets/tabs-BWM53lqg.css">
+</head>
+<body class="page-wrapper">
+
+  <!-- Skip Link (acessibilidade) -->
+  <a href="#main-content" class="skip-link">Ir para o conteúdo principal</a>
+
+  <!-- GOV BAR -->
+  <div class="gov-bar" role="banner" aria-label="Identificação do Governo">
+    <div class="container">
+      <div class="gov-bar__inner">
+        <a href="https://www.mg.gov.br" class="gov-bar__brand" aria-label="Portal do Governo de Minas Gerais">
+          <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+            <path d="M10 2L2 7v11h5v-7h6v7h5V7L10 2z"/>
+          </svg>
+          Portal do Governo de Minas Gerais
+        </a>
+        <nav class="gov-bar__links" aria-label="Links do governo">
+          <a href="https://www.fazenda.mg.gov.br" class="gov-bar__link">Secretaria de Fazenda</a>
+          <span class="gov-bar__separator" aria-hidden="true">|</span>
+          <a href="#" class="gov-bar__link">Acesso à Informação (LAI)</a>
+          <span class="gov-bar__separator" aria-hidden="true">|</span>
+          <a href="#" class="gov-bar__link">Ouvidoria</a>
+        </nav>
+      </div>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header class="header" role="banner">
+    <div class="container">
+      <div class="header__inner">
+
+        <!-- Logo -->
+        <a href="/Emilia-Vieira/" class="header__logo" aria-label="Tesouro Estadual de Minas Gerais — Início">
+          <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAgNjAiIHJvbGU9ImltZyIgYXJpYS1sYWJlbD0iVGVzb3VybyBFc3RhZHVhbCBkZSBNaW5hcyBHZXJhaXMiPgogIDwhLS0gRXNjdWRvIGVzdGlsaXphZG8gTUcgLS0+CiAgPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCwgNSkiPgogICAgPHBhdGggZD0iTTIyIDIgTDM2IDIgTDM2IDMyIEMzNiA0MCAyOCA0NiAyMiA0OCBDMTYgNDYgOCA0MCA4IDMyIEw4IDIgWiIgZmlsbD0iIzAwM0I3MSIvPgogICAgPHBhdGggZD0iTTIyIDggTDMyIDggTDMyIDMyIEMzMiAzOCAyNiA0MyAyMiA0NSBDMTggNDMgMTIgMzggMTIgMzIgTDEyIDggWiIgZmlsbD0iIzAwNTdBOCIvPgogICAgPCEtLSBFc3RyZWxhIGRvdXJhZGEgLS0+CiAgICA8cGF0aCBkPSJNMjIgMTQgTDIzLjUgMTkgTDI5IDE5IEwyNC41IDIyIEwyNiAyNyBMMjIgMjQgTDE4IDI3IEwxOS41IDIyIEwxNSAxOSBMMjAuNSAxOSBaIiBmaWxsPSIjRjVDODQyIi8+CiAgPC9nPgoKICA8IS0tIFRleHRvcyAtLT4KICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSg0NCwgMCkiPgogICAgPHRleHQgeD0iMCIgeT0iMjAiIGZvbnQtZmFtaWx5PSJJbnRlciwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMSIgZm9udC13ZWlnaHQ9IjgwMCIgZmlsbD0iIzAwM0I3MSIgbGV0dGVyLXNwYWNpbmc9Ii0wLjMiPlRFU09VUk8gRVNUQURVQUw8L3RleHQ+CiAgICA8dGV4dCB4PSIwIiB5PSIzNCIgZm9udC1mYW1pbHk9IkludGVyLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjkiIGZvbnQtd2VpZ2h0PSI1MDAiIGZpbGw9IiM0QjU1NjMiIGxldHRlci1zcGFjaW5nPSIwLjUiPk1JTkFTIEdFUkFJUzwvdGV4dD4KICAgIDxsaW5lIHgxPSIwIiB5MT0iMzgiIHgyPSIxNTUiIHkyPSIzOCIgc3Ryb2tlPSIjRTVFN0VCIiBzdHJva2Utd2lkdGg9IjEiLz4KICAgIDx0ZXh0IHg9IjAiIHk9IjUwIiBmb250LWZhbWlseT0iSW50ZXIsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iOCIgZm9udC13ZWlnaHQ9IjQwMCIgZmlsbD0iIzlDQTNBRiIgbGV0dGVyLXNwYWNpbmc9IjEiPlNFQ1JFVEFSSUEgREUgRVNUQURPIERFIEZBWkVOREE8L3RleHQ+CiAgPC9nPgo8L3N2Zz4K" alt="" class="header__logo-img" width="220" height="54">
+        </a>
+
+        <!-- Nav Desktop -->
+        <nav class="nav-primary" aria-label="Navegação principal">
+          <ul class="nav-primary__list" role="list">
+
+            <!-- Transparência -->
+            <li class="nav-primary__item">
+              <button class="nav-primary__link" aria-haspopup="true" aria-expanded="false">
+                Transparência Fiscal
+                <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <polyline points="6 9 12 15 18 9"/>
+                </svg>
+              </button>
+              <div class="mega-menu" role="region" aria-label="Transparência Fiscal">
+                <span class="mega-menu__section-title">Dados e Relatórios</span>
+                <div class="mega-menu__grid">
+                  <a href="/Emilia-Vieira/pages/transparencia.html" class="mega-menu__item">
+                    <div class="mega-menu__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+                    <div class="mega-menu__content">
+                      <div class="mega-menu__title">Receitas e Despesas</div>
+                      <div class="mega-menu__desc">Execução orçamentária em tempo real</div>
+                    </div>
+                  </a>
+                  <a href="/Emilia-Vieira/pages/transparencia.html#divida" class="mega-menu__item">
+                    <div class="mega-menu__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+                    <div class="mega-menu__content">
+                      <div class="mega-menu__title">Dívida Pública</div>
+                      <div class="mega-menu__desc">Estoque e evolução da dívida consolidada</div>
+                    </div>
+                  </a>
+                  <a href="/Emilia-Vieira/pages/transparencia.html#resultado" class="mega-menu__item">
+                    <div class="mega-menu__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+                    <div class="mega-menu__content">
+                      <div class="mega-menu__title">Resultado Fiscal</div>
+                      <div class="mega-menu__desc">Meta e resultado fiscal primário</div>
+                    </div>
+                  </a>
+                  <a href="/Emilia-Vieira/pages/transparencia.html#rreo" class="mega-menu__item">
+                    <div class="mega-menu__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+                    <div class="mega-menu__content">
+                      <div class="mega-menu__title">RREO e RGF</div>
+                      <div class="mega-menu__desc">Relatórios bimestrais e semestrais LRF</div>
+                    </div>
+                  </a>
+                  <a href="#" class="mega-menu__item">
+                    <div class="mega-menu__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+                    <div class="mega-menu__content">
+                      <div class="mega-menu__title">Dados Abertos</div>
+                      <div class="mega-menu__desc">APIs e datasets para reutilização</div>
+                    </div>
+                  </a>
+                  <a href="#" class="mega-menu__item">
+                    <div class="mega-menu__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+                    <div class="mega-menu__content">
+                      <div class="mega-menu__title">PCASP / SIAF</div>
+                      <div class="mega-menu__desc">Plano de contas e sistema contábil</div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </li>
+
+            <!-- Serviços -->
+            <li class="nav-primary__item">
+              <a href="/Emilia-Vieira/pages/servicos.html" class="nav-primary__link">Serviços</a>
+            </li>
+
+            <!-- Publicações -->
+            <li class="nav-primary__item">
+              <button class="nav-primary__link" aria-haspopup="true" aria-expanded="false">
+                Publicações
+                <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <polyline points="6 9 12 15 18 9"/>
+                </svg>
+              </button>
+              <div class="mega-menu" role="region" aria-label="Publicações">
+                <div class="mega-menu__grid">
+                  <a href="/Emilia-Vieira/pages/publicacoes.html" class="mega-menu__item">
+                    <div class="mega-menu__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
+                    <div class="mega-menu__content">
+                      <div class="mega-menu__title">Portarias e Resoluções</div>
+                      <div class="mega-menu__desc">Legislação e normas do Tesouro</div>
+                    </div>
+                  </a>
+                  <a href="#" class="mega-menu__item">
+                    <div class="mega-menu__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/></svg></div>
+                    <div class="mega-menu__content">
+                      <div class="mega-menu__title">Boletins e Notas Técnicas</div>
+                      <div class="mega-menu__desc">Análises e publicações técnicas</div>
+                    </div>
+                  </a>
+                  <a href="#" class="mega-menu__item">
+                    <div class="mega-menu__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+                    <div class="mega-menu__content">
+                      <div class="mega-menu__title">Relatórios Anuais</div>
+                      <div class="mega-menu__desc">Prestações de contas e balanços</div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </li>
+
+            <!-- Sobre -->
+            <li class="nav-primary__item">
+              <a href="#" class="nav-primary__link">Sobre</a>
+            </li>
+
+            <!-- Contato -->
+            <li class="nav-primary__item">
+              <a href="/Emilia-Vieira/pages/contato.html" class="nav-primary__link">Contato</a>
+            </li>
+          </ul>
+        </nav>
+
+        <!-- Ações do header -->
+        <div class="header__actions">
+          <!-- Busca -->
+          <div class="header-search">
+            <label for="header-search-input" class="sr-only">Buscar no portal</label>
+            <input
+              type="search"
+              id="header-search-input"
+              class="header-search__input"
+              placeholder="Buscar..."
+              aria-label="Buscar no portal do Tesouro"
+            >
+            <button class="header-search__btn" aria-label="Realizar busca">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+              </svg>
+            </button>
+          </div>
+
+          <!-- Acessibilidade -->
+          <button class="btn-accessibility" title="Opções de acessibilidade" aria-label="Opções de acessibilidade">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <circle cx="12" cy="12" r="10"/>
+              <circle cx="12" cy="7" r="1" fill="currentColor"/>
+              <path d="M9 11h6M12 11v6"/>
+            </svg>
+          </button>
+
+          <!-- Hamburger Mobile -->
+          <button
+            class="header__hamburger"
+            aria-label="Abrir menu de navegação"
+            aria-expanded="false"
+            aria-controls="mobile-nav"
+          >
+            <span class="header__hamburger-line" aria-hidden="true"></span>
+            <span class="header__hamburger-line" aria-hidden="true"></span>
+            <span class="header__hamburger-line" aria-hidden="true"></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Nav -->
+  <div class="mobile-nav__overlay" aria-hidden="true"></div>
+  <nav id="mobile-nav" class="mobile-nav" aria-label="Menu mobile" aria-hidden="true">
+    <div class="mobile-nav__header">
+      <span style="font-weight: 700; color: var(--color-mg-azul); font-size: 0.875rem;">MENU DE NAVEGAÇÃO</span>
+      <button class="mobile-nav__close" aria-label="Fechar menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="mobile-nav__search">
+      <label for="mobile-search" class="sr-only">Buscar</label>
+      <input type="search" id="mobile-search" data-mobile-search placeholder="Buscar no portal..." class="form-control">
+    </div>
+
+    <ul class="mobile-nav__list">
+      <li class="mobile-nav__item">
+        <a href="/Emilia-Vieira/pages/transparencia.html" class="mobile-nav__link">Transparência Fiscal</a>
+      </li>
+      <li class="mobile-nav__item">
+        <a href="/Emilia-Vieira/pages/servicos.html" class="mobile-nav__link">Serviços</a>
+      </li>
+      <li class="mobile-nav__item">
+        <a href="/Emilia-Vieira/pages/publicacoes.html" class="mobile-nav__link">Publicações</a>
+      </li>
+      <li class="mobile-nav__item">
+        <a href="#" class="mobile-nav__link">Sobre o Tesouro</a>
+      </li>
+      <li class="mobile-nav__item">
+        <a href="/Emilia-Vieira/pages/contato.html" class="mobile-nav__link">Contato</a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- MAIN CONTENT -->
+  <main id="main-content" class="page-main">
+
+    <!-- ===== HERO ===== -->
+    <section class="hero" aria-label="Apresentação do Tesouro Estadual">
+      <div class="container">
+        <div class="grid grid--2 items-center gap-12" style="grid-template-columns: 1fr 420px;">
+
+          <div class="hero__inner hero__content" data-animate>
+            <div class="hero__overline">
+              <span class="hero__overline-dot" aria-hidden="true"></span>
+              Governo de Minas Gerais
+            </div>
+            <h1 class="hero__title">
+              Finanças públicas<br>
+              <span>com transparência</span><br>
+              para o cidadão
+            </h1>
+            <p class="hero__desc">
+              O Tesouro Estadual de Minas Gerais gerencia os recursos públicos com responsabilidade fiscal e compromisso com a sociedade mineira.
+            </p>
+            <div class="hero__actions">
+              <a href="/Emilia-Vieira/pages/transparencia.html" class="btn btn--white btn--lg">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20" aria-hidden="true">
+                  <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+                </svg>
+                Ver Dados Fiscais
+              </a>
+              <a href="/Emilia-Vieira/pages/servicos.html" class="btn btn--outline-white btn--lg">
+                Acessar Serviços
+              </a>
+            </div>
+
+            <!-- Stats -->
+            <div class="hero__stats">
+              <div class="hero__stat" data-animate data-delay="100">
+                <div class="hero__stat-value" data-countup="134.8" data-prefix="R$ " data-suffix=" bi" data-decimals="1">R$ 134.8 bi</div>
+                <div class="hero__stat-label">Receita anual 2024</div>
+              </div>
+              <div class="hero__stat" data-animate data-delay="200">
+                <div class="hero__stat-value" data-countup="4.1" data-prefix="R$ " data-suffix=" bi" data-decimals="1">R$ 4.1 bi</div>
+                <div class="hero__stat-label">Superávit fiscal</div>
+              </div>
+              <div class="hero__stat" data-animate data-delay="300">
+                <div class="hero__stat-value" data-countup="98" data-suffix="%" data-decimals="0">98%</div>
+                <div class="hero__stat-label">Meta RREO cumprida</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Chart Preview -->
+          <div class="hero__visual hidden-mobile" data-animate data-delay="200" aria-hidden="true">
+            <div class="hero__chart-preview">
+              <div style="font-size: 0.75rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 1rem;">RECEITAS 2024 (R$ bi)</div>
+              <div style="position: relative; height: 180px;">
+                <canvas id="chart-hero-sparkline"></canvas>
+              </div>
+              <div style="display: flex; justify-content: space-between; margin-top: 1rem; font-size: 0.75rem; color: rgba(255,255,255,0.5);">
+                <span>Jan 2024</span>
+                <span>Dez 2024</span>
+              </div>
+              <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: space-between; align-items: center;">
+                <div>
+                  <div style="font-size: 1.5rem; font-weight: 800; color: white; font-family: 'JetBrains Mono', monospace;">+7.3%</div>
+                  <div style="font-size: 0.75rem; color: rgba(255,255,255,0.5);">vs. ano anterior</div>
+                </div>
+                <div style="background: rgba(27, 122, 64, 0.3); border: 1px solid rgba(27, 122, 64, 0.5); color: #4ade80; padding: 4px 12px; border-radius: 999px; font-size: 0.75rem; font-weight: 700;">↑ Acima da meta</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ACESSO RÁPIDO ===== -->
+    <section class="quick-access" aria-labelledby="quick-access-title">
+      <div class="container">
+        <p class="section-label" style="text-align: center; margin-bottom: 0.5rem;" id="quick-access-label">Navegação rápida</p>
+        <h2 class="h3 text-center mb-6" id="quick-access-title" data-animate>Acesso Rápido aos Serviços</h2>
+        <p class="text-body text-center text-secondary mb-10" data-animate data-delay="100">Encontre o que precisa de forma rápida e eficiente</p>
+
+        <div class="quick-access__grid" role="list">
+          <a href="/Emilia-Vieira/pages/transparencia.html" class="quick-card" role="listitem" data-animate data-delay="100">
+            <div class="quick-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            </div>
+            <span class="quick-card__label">Execução Orçamentária</span>
+          </a>
+          <a href="/Emilia-Vieira/pages/transparencia.html#divida" class="quick-card" role="listitem" data-animate data-delay="150">
+            <div class="quick-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            </div>
+            <span class="quick-card__label">Dívida Pública</span>
+          </a>
+          <a href="/Emilia-Vieira/pages/transparencia.html#rreo" class="quick-card" role="listitem" data-animate data-delay="200">
+            <div class="quick-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            </div>
+            <span class="quick-card__label">RREO e RGF</span>
+          </a>
+          <a href="#" class="quick-card" role="listitem" data-animate data-delay="250">
+            <div class="quick-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+            </div>
+            <span class="quick-card__label">Dados Abertos</span>
+          </a>
+          <a href="/Emilia-Vieira/pages/publicacoes.html" class="quick-card" role="listitem" data-animate data-delay="300">
+            <div class="quick-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+            </div>
+            <span class="quick-card__label">Legislação</span>
+          </a>
+          <a href="/Emilia-Vieira/pages/contato.html" class="quick-card" role="listitem" data-animate data-delay="350">
+            <div class="quick-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.41 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.96A16 16 0 0 0 16 17.04l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 24 18z"/></svg>
+            </div>
+            <span class="quick-card__label">Fale Conosco</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== INDICADORES KPI ===== -->
+    <section class="kpi-section" aria-labelledby="kpi-title">
+      <div class="container">
+        <div class="kpi-section__header">
+          <div>
+            <p class="section-label">Situação Fiscal Atual</p>
+            <h2 class="h2" id="kpi-title" data-animate>Indicadores do Tesouro Estadual</h2>
+          </div>
+          <div>
+            <div class="kpi-section__update" data-animate>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              Atualizado em março/2025
+            </div>
+            <a href="/Emilia-Vieira/pages/transparencia.html" class="btn btn--secondary btn--sm" style="margin-top: 0.5rem;">Ver painel completo</a>
+          </div>
+        </div>
+
+        <div class="dashboard-grid dashboard-grid--4" role="list">
+
+          <article class="stat-card" role="listitem" data-animate data-delay="100">
+            <div class="stat-card__accent"></div>
+            <div class="stat-card__header">
+              <span class="stat-card__label">Receita Arrecadada</span>
+              <div class="stat-card__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+              </div>
+            </div>
+            <div class="stat-card__value stat-card__value--mono" data-countup="134.8" data-prefix="R$ " data-suffix=" bi" data-decimals="1">R$ 134,8 bi</div>
+            <div style="margin-top: 0.5rem;">
+              <span class="stat-card__change stat-card__change--up">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="18 15 12 9 6 15"/></svg>
+                +7.3% vs 2023
+              </span>
+            </div>
+            <div class="stat-card__footer">Exercício 2024 — Jan a Dez</div>
+          </article>
+
+          <article class="stat-card" role="listitem" data-animate data-delay="200">
+            <div class="stat-card__accent stat-card__accent--verde"></div>
+            <div class="stat-card__header">
+              <span class="stat-card__label">Superávit Fiscal</span>
+              <div class="stat-card__icon stat-card__icon--verde">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+              </div>
+            </div>
+            <div class="stat-card__value stat-card__value--mono" style="color: var(--color-sucesso)" data-countup="4.1" data-prefix="R$ " data-suffix=" bi" data-decimals="1">R$ 4,1 bi</div>
+            <div style="margin-top: 0.5rem;">
+              <span class="stat-card__change stat-card__change--up">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="18 15 12 9 6 15"/></svg>
+                3º superávit consecutivo
+              </span>
+            </div>
+            <div class="stat-card__footer">Resultado fiscal primário 2024</div>
+          </article>
+
+          <article class="stat-card" role="listitem" data-animate data-delay="300">
+            <div class="stat-card__accent stat-card__accent--ouro"></div>
+            <div class="stat-card__header">
+              <span class="stat-card__label">Dívida Consolidada</span>
+              <div class="stat-card__icon stat-card__icon--ouro">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
+              </div>
+            </div>
+            <div class="stat-card__value stat-card__value--mono" data-countup="98" data-prefix="R$ " data-suffix=" bi" data-decimals="0">R$ 98 bi</div>
+            <div style="margin-top: 0.5rem;">
+              <span class="stat-card__change stat-card__change--up">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="18 15 12 9 6 15"/></svg>
+                -4.8% (redução)
+              </span>
+            </div>
+            <div class="stat-card__footer">Dívida consolidada bruta 2024</div>
+          </article>
+
+          <article class="stat-card" role="listitem" data-animate data-delay="400">
+            <div class="stat-card__accent"></div>
+            <div class="stat-card__header">
+              <span class="stat-card__label">Investimentos</span>
+              <div class="stat-card__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+              </div>
+            </div>
+            <div class="stat-card__value stat-card__value--mono" data-countup="12.4" data-prefix="R$ " data-suffix=" bi" data-decimals="1">R$ 12,4 bi</div>
+            <div style="margin-top: 0.5rem;">
+              <span class="stat-card__change stat-card__change--up">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="18 15 12 9 6 15"/></svg>
+                +15.2% vs 2023
+              </span>
+            </div>
+            <div class="stat-card__footer">Despesas de capital 2024</div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== NOTÍCIAS ===== -->
+    <section class="news-section" aria-labelledby="news-title">
+      <div class="container">
+        <div class="news-section__header">
+          <div>
+            <p class="section-label">Portal de Comunicação</p>
+            <h2 class="h2" id="news-title" data-animate>Notícias e Atualizações</h2>
+          </div>
+          <a href="#" class="btn btn--secondary hidden-mobile">Ver todas as notícias</a>
+        </div>
+
+        <div class="news-section__grid">
+
+          <!-- Notícia destaque -->
+          <article class="news-card news-card--featured news-section__featured" data-animate>
+            <div class="news-card__image">
+              <div class="news-card__image-placeholder">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+              </div>
+            </div>
+            <div class="news-card__body">
+              <span class="news-card__category">Resultado Fiscal</span>
+              <h3 class="news-card__title">
+                <a href="#">Minas Gerais registra terceiro superávit fiscal consecutivo em 2024</a>
+              </h3>
+              <p class="news-card__excerpt">O Tesouro Estadual divulgou os resultados consolidados do exercício 2024, demonstrando equilíbrio nas contas públicas e cumprimento das metas da Lei de Responsabilidade Fiscal.</p>
+              <div class="news-card__meta">
+                <time class="news-card__date" datetime="2025-02-15">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                  15 de fevereiro de 2025
+                </time>
+                <span class="news-card__read-time">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  5 min de leitura
+                </span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Notícias secundárias -->
+          <article class="news-card" data-animate data-delay="100">
+            <div class="news-card__image">
+              <div class="news-card__image-placeholder">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+              </div>
+            </div>
+            <div class="news-card__body">
+              <span class="news-card__category">RREO</span>
+              <h3 class="news-card__title">
+                <a href="#">Publicado RREO do 6º bimestre de 2024</a>
+              </h3>
+              <p class="news-card__excerpt">O Relatório Resumido da Execução Orçamentária do 6º bimestre está disponível no portal para consulta da sociedade.</p>
+              <div class="news-card__meta">
+                <time class="news-card__date" datetime="2025-02-01">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                  1º de fevereiro de 2025
+                </time>
+              </div>
+            </div>
+          </article>
+
+          <article class="news-card" data-animate data-delay="200">
+            <div class="news-card__image">
+              <div class="news-card__image-placeholder">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+              </div>
+            </div>
+            <div class="news-card__body">
+              <span class="news-card__category">Modernização</span>
+              <h3 class="news-card__title">
+                <a href="#">Novo portal do Tesouro Estadual entra em operação</a>
+              </h3>
+              <p class="news-card__excerpt">Com visual moderno, dados interativos e maior acessibilidade, o portal facilita o acesso do cidadão às informações fiscais.</p>
+              <div class="news-card__meta">
+                <time class="news-card__date" datetime="2025-01-15">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                  15 de janeiro de 2025
+                </time>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <div class="text-center mt-8">
+          <a href="#" class="btn btn--secondary hidden-desktop">Ver todas as notícias</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SERVIÇOS POR PERFIL ===== -->
+    <section class="services-section" aria-labelledby="services-title">
+      <div class="container">
+        <div class="section-header" data-animate>
+          <p class="section-header__overline">Serviços do Tesouro</p>
+          <h2 class="h2 section-header__title" id="services-title">Serviços por perfil de usuário</h2>
+          <p class="section-header__desc">Encontre facilmente o serviço que você precisa de acordo com o seu perfil</p>
+        </div>
+
+        <div class="tabs" data-animate data-delay="100">
+          <div class="tabs__nav" role="tablist" aria-label="Perfil de usuário">
+            <button class="tabs__tab is-active" role="tab" aria-selected="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              Cidadão
+            </button>
+            <button class="tabs__tab" role="tab" aria-selected="false">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+              Empresa
+            </button>
+            <button class="tabs__tab" role="tab" aria-selected="false">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+              Município
+            </button>
+            <button class="tabs__tab" role="tab" aria-selected="false">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+              Servidor
+            </button>
+          </div>
+
+          <!-- Tab: Cidadão -->
+          <div class="tabs__panel is-active" role="tabpanel">
+            <div class="grid grid--3 gap-6">
+              <a href="/Emilia-Vieira/pages/transparencia.html" class="service-card">
+                <div class="service-card__icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                </div>
+                <div class="service-card__title">Consultar gastos do governo</div>
+                <div class="service-card__desc">Acesse dados detalhados sobre receitas e despesas do Estado de Minas Gerais.</div>
+                <div class="service-card__link">
+                  Acessar
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </div>
+              </a>
+              <a href="#" class="service-card">
+                <div class="service-card__icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/></svg>
+                </div>
+                <div class="service-card__title">Relatórios Fiscais (RREO/RGF)</div>
+                <div class="service-card__desc">Baixe os relatórios exigidos pela Lei de Responsabilidade Fiscal.</div>
+                <div class="service-card__link">
+                  Acessar
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </div>
+              </a>
+              <a href="#" class="service-card">
+                <div class="service-card__icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                </div>
+                <div class="service-card__title">Dados Abertos</div>
+                <div class="service-card__desc">Acesse datasets em formato aberto para pesquisa e desenvolvimento.</div>
+                <div class="service-card__link">
+                  Acessar
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <!-- Tab: Empresa -->
+          <div class="tabs__panel" role="tabpanel">
+            <div class="grid grid--3 gap-6">
+              <a href="#" class="service-card">
+                <div class="service-card__icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+                </div>
+                <div class="service-card__title">Certidão de Regularidade Fiscal</div>
+                <div class="service-card__desc">Emita certidões sobre regularidade fiscal junto ao Estado.</div>
+                <div class="service-card__link">
+                  Acessar
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </div>
+              </a>
+              <a href="#" class="service-card">
+                <div class="service-card__icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                </div>
+                <div class="service-card__title">Pagamentos do Estado a Fornecedores</div>
+                <div class="service-card__desc">Consulte o status de pagamentos pendentes e realizados.</div>
+                <div class="service-card__link">
+                  Acessar
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </div>
+              </a>
+              <a href="#" class="service-card">
+                <div class="service-card__icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                </div>
+                <div class="service-card__title">e-SIC — Acesso à Informação</div>
+                <div class="service-card__desc">Solicite informações públicas pelo sistema eletrônico.</div>
+                <div class="service-card__link">
+                  Acessar
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <!-- Tab: Município -->
+          <div class="tabs__panel" role="tabpanel">
+            <div class="grid grid--3 gap-6">
+              <a href="#" class="service-card">
+                <div class="service-card__icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+                </div>
+                <div class="service-card__title">Transferências Constitucionais</div>
+                <div class="service-card__desc">Consulte os repasses ICMS, IPVA e outras transferências aos municípios.</div>
+                <div class="service-card__link">
+                  Acessar
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <!-- Tab: Servidor -->
+          <div class="tabs__panel" role="tabpanel">
+            <div class="grid grid--3 gap-6">
+              <a href="#" class="service-card">
+                <div class="service-card__icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                </div>
+                <div class="service-card__title">Consulta de Remuneração</div>
+                <div class="service-card__desc">Portal de consulta de contracheque e dados funcionais.</div>
+                <div class="service-card__link">
+                  Acessar
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center mt-10" data-animate>
+          <a href="/Emilia-Vieira/pages/servicos.html" class="btn btn--primary btn--lg">Ver todos os serviços</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== LEGISLAÇÃO EM DESTAQUE ===== -->
+    <section class="legislation-section" aria-labelledby="legislation-title">
+      <div class="container">
+        <div class="section-header" data-animate>
+          <p class="section-header__overline">Base Legal</p>
+          <h2 class="h2 section-header__title" id="legislation-title">Legislação em Destaque</h2>
+          <p class="section-header__desc">Últimas portarias, resoluções e normas do Tesouro Estadual</p>
+        </div>
+
+        <div class="legislation-list" data-animate data-delay="100">
+          <a href="#" class="doc-card">
+            <div class="doc-card__type-icon doc-card__type-icon--pdf">PDF</div>
+            <div class="doc-card__content">
+              <div class="doc-card__title">Portaria STN nº 016/2025 — Normas de Classificação Orçamentária</div>
+              <div class="doc-card__meta">
+                <span>Portaria</span>
+                <span>•</span>
+                <time datetime="2025-03-01">1 de março de 2025</time>
+                <span>•</span>
+                <span>2,4 MB</span>
+              </div>
+            </div>
+            <div class="doc-card__actions">
+              <button class="btn btn--ghost btn--sm btn--icon-only" aria-label="Baixar PDF">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              </button>
+            </div>
+          </a>
+
+          <a href="#" class="doc-card">
+            <div class="doc-card__type-icon doc-card__type-icon--pdf">PDF</div>
+            <div class="doc-card__content">
+              <div class="doc-card__title">Resolução SEFAZ nº 5.890/2025 — Regras de Execução Financeira</div>
+              <div class="doc-card__meta">
+                <span>Resolução</span>
+                <span>•</span>
+                <time datetime="2025-02-14">14 de fevereiro de 2025</time>
+                <span>•</span>
+                <span>1,8 MB</span>
+              </div>
+            </div>
+            <div class="doc-card__actions">
+              <button class="btn btn--ghost btn--sm btn--icon-only" aria-label="Baixar PDF">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              </button>
+            </div>
+          </a>
+
+          <a href="#" class="doc-card">
+            <div class="doc-card__type-icon doc-card__type-icon--xls">XLS</div>
+            <div class="doc-card__content">
+              <div class="doc-card__title">PCASP 2025 — Plano de Contas Aplicado ao Setor Público</div>
+              <div class="doc-card__meta">
+                <span>Manual</span>
+                <span>•</span>
+                <time datetime="2025-01-02">2 de janeiro de 2025</time>
+                <span>•</span>
+                <span>5,1 MB</span>
+              </div>
+            </div>
+            <div class="doc-card__actions">
+              <button class="btn btn--ghost btn--sm btn--icon-only" aria-label="Baixar Excel">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              </button>
+            </div>
+          </a>
+
+          <a href="#" class="doc-card">
+            <div class="doc-card__type-icon doc-card__type-icon--pdf">PDF</div>
+            <div class="doc-card__content">
+              <div class="doc-card__title">Nota Técnica nº 003/2025 — Metodologia de Cálculo da DCL/RCL</div>
+              <div class="doc-card__meta">
+                <span>Nota Técnica</span>
+                <span>•</span>
+                <time datetime="2024-12-20">20 de dezembro de 2024</time>
+                <span>•</span>
+                <span>0,9 MB</span>
+              </div>
+            </div>
+            <div class="doc-card__actions">
+              <button class="btn btn--ghost btn--sm btn--icon-only" aria-label="Baixar PDF">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              </button>
+            </div>
+          </a>
+        </div>
+
+        <div class="text-center mt-8" data-animate>
+          <a href="/Emilia-Vieira/pages/publicacoes.html" class="btn btn--secondary">Ver toda a legislação</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== BANNER CTA ===== -->
+    <section class="banner-cta" aria-labelledby="cta-title">
+      <div class="container">
+        <div data-animate>
+          <h2 class="banner-cta__title" id="cta-title">Transparência é um direito do cidadão</h2>
+          <p class="banner-cta__desc">Acesse o portal de dados abertos e acompanhe a gestão das finanças públicas de Minas Gerais em tempo real.</p>
+          <div class="banner-cta__actions">
+            <a href="/Emilia-Vieira/pages/transparencia.html" class="btn btn--white btn--lg">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+              Acessar Painel Fiscal
+            </a>
+            <a href="#" class="btn btn--outline-white btn--lg">Portal de Dados Abertos</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer__top">
+      <div class="container">
+        <div class="footer__grid">
+
+          <!-- Marca -->
+          <div class="footer__brand">
+            <a href="/Emilia-Vieira/" class="footer__logo" aria-label="Tesouro Estadual - Início">
+              <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAgNjAiIHJvbGU9ImltZyIgYXJpYS1sYWJlbD0iVGVzb3VybyBFc3RhZHVhbCBkZSBNaW5hcyBHZXJhaXMiPgogIDwhLS0gRXNjdWRvIGVzdGlsaXphZG8gTUcgLS0+CiAgPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCwgNSkiPgogICAgPHBhdGggZD0iTTIyIDIgTDM2IDIgTDM2IDMyIEMzNiA0MCAyOCA0NiAyMiA0OCBDMTYgNDYgOCA0MCA4IDMyIEw4IDIgWiIgZmlsbD0iIzAwM0I3MSIvPgogICAgPHBhdGggZD0iTTIyIDggTDMyIDggTDMyIDMyIEMzMiAzOCAyNiA0MyAyMiA0NSBDMTggNDMgMTIgMzggMTIgMzIgTDEyIDggWiIgZmlsbD0iIzAwNTdBOCIvPgogICAgPCEtLSBFc3RyZWxhIGRvdXJhZGEgLS0+CiAgICA8cGF0aCBkPSJNMjIgMTQgTDIzLjUgMTkgTDI5IDE5IEwyNC41IDIyIEwyNiAyNyBMMjIgMjQgTDE4IDI3IEwxOS41IDIyIEwxNSAxOSBMMjAuNSAxOSBaIiBmaWxsPSIjRjVDODQyIi8+CiAgPC9nPgoKICA8IS0tIFRleHRvcyAtLT4KICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSg0NCwgMCkiPgogICAgPHRleHQgeD0iMCIgeT0iMjAiIGZvbnQtZmFtaWx5PSJJbnRlciwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMSIgZm9udC13ZWlnaHQ9IjgwMCIgZmlsbD0iIzAwM0I3MSIgbGV0dGVyLXNwYWNpbmc9Ii0wLjMiPlRFU09VUk8gRVNUQURVQUw8L3RleHQ+CiAgICA8dGV4dCB4PSIwIiB5PSIzNCIgZm9udC1mYW1pbHk9IkludGVyLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjkiIGZvbnQtd2VpZ2h0PSI1MDAiIGZpbGw9IiM0QjU1NjMiIGxldHRlci1zcGFjaW5nPSIwLjUiPk1JTkFTIEdFUkFJUzwvdGV4dD4KICAgIDxsaW5lIHgxPSIwIiB5MT0iMzgiIHgyPSIxNTUiIHkyPSIzOCIgc3Ryb2tlPSIjRTVFN0VCIiBzdHJva2Utd2lkdGg9IjEiLz4KICAgIDx0ZXh0IHg9IjAiIHk9IjUwIiBmb250LWZhbWlseT0iSW50ZXIsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iOCIgZm9udC13ZWlnaHQ9IjQwMCIgZmlsbD0iIzlDQTNBRiIgbGV0dGVyLXNwYWNpbmc9IjEiPlNFQ1JFVEFSSUEgREUgRVNUQURPIERFIEZBWkVOREE8L3RleHQ+CiAgPC9nPgo8L3N2Zz4K" alt="Tesouro Estadual de Minas Gerais" class="footer__logo-img" width="200" height="48">
+            </a>
+            <p class="footer__desc">
+              O Tesouro Estadual é responsável pela gestão fiscal e financeira do Estado de Minas Gerais, garantindo a transparência e responsabilidade dos recursos públicos.
+            </p>
+            <div class="footer__social" aria-label="Redes sociais">
+              <a href="#" class="footer__social-link" aria-label="Twitter/X">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+              </a>
+              <a href="#" class="footer__social-link" aria-label="YouTube">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+              </a>
+              <a href="#" class="footer__social-link" aria-label="Instagram">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Links: Portal -->
+          <div class="footer__col">
+            <h3 class="footer__col-title">Transparência</h3>
+            <ul class="footer__links" role="list">
+              <li><a href="/Emilia-Vieira/pages/transparencia.html" class="footer__link">Execução Orçamentária</a></li>
+              <li><a href="/Emilia-Vieira/pages/transparencia.html#divida" class="footer__link">Dívida Pública</a></li>
+              <li><a href="/Emilia-Vieira/pages/transparencia.html#resultado" class="footer__link">Resultado Fiscal</a></li>
+              <li><a href="#" class="footer__link">RREO e RGF</a></li>
+              <li><a href="#" class="footer__link">Dados Abertos</a></li>
+            </ul>
+          </div>
+
+          <!-- Links: Serviços -->
+          <div class="footer__col">
+            <h3 class="footer__col-title">Serviços</h3>
+            <ul class="footer__links" role="list">
+              <li><a href="/Emilia-Vieira/pages/servicos.html" class="footer__link">Todos os Serviços</a></li>
+              <li><a href="#" class="footer__link">Portal de Dados</a></li>
+              <li><a href="#" class="footer__link">e-SIC — LAI</a></li>
+              <li><a href="#" class="footer__link">Ouvidoria</a></li>
+            </ul>
+          </div>
+
+          <!-- Links: Institucional -->
+          <div class="footer__col">
+            <h3 class="footer__col-title">Institucional</h3>
+            <ul class="footer__links" role="list">
+              <li><a href="#" class="footer__link">Sobre o Tesouro</a></li>
+              <li><a href="#" class="footer__link">Organograma</a></li>
+              <li><a href="/Emilia-Vieira/pages/publicacoes.html" class="footer__link">Legislação</a></li>
+              <li><a href="/Emilia-Vieira/pages/contato.html" class="footer__link">Contato</a></li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer inferior -->
+    <div class="footer__bottom">
+      <div class="container">
+        <div class="footer__bottom-inner">
+          <div class="footer__copyright">
+            <p><strong>Governo de Minas Gerais</strong> — Secretaria de Estado de Fazenda</p>
+            <p>Tesouro Estadual &copy; 2025. Todos os direitos reservados.</p>
+          </div>
+
+          <div class="footer__badges" aria-label="Certificações de acessibilidade e conformidade">
+            <a href="#" class="footer__badge" aria-label="Conformidade WCAG 2.1 AA">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              WCAG 2.1 AA
+            </a>
+            <a href="#" class="footer__badge">eMAG 3.1</a>
+            <a href="#" class="footer__badge">LGPD</a>
+            <a href="#" class="footer__badge">Gov.br</a>
+          </div>
+
+          <nav class="footer__legal" aria-label="Links legais">
+            <a href="#" class="footer__legal-link">Privacidade</a>
+            <a href="#" class="footer__legal-link">Cookies</a>
+            <a href="#" class="footer__legal-link">Acessibilidade</a>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Cookie Banner (LGPD) -->
+  <div id="cookieBanner" class="cookie-banner" role="dialog" aria-label="Aviso de cookies" aria-live="polite">
+    <div class="container">
+      <div class="cookie-banner__inner">
+        <p class="cookie-banner__text">
+          Este site utiliza cookies essenciais para funcionamento e cookies analíticos para melhorar sua experiência.
+          <a href="#">Saiba mais sobre nossa política de privacidade</a>.
+        </p>
+        <div class="cookie-banner__actions">
+          <button class="btn btn--ghost btn--sm" style="color: rgba(255,255,255,0.7);" data-decline-cookies>Recusar não essenciais</button>
+          <button class="btn btn--primary btn--sm" data-accept-cookies>Aceitar todos</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+</body>
+</html>
